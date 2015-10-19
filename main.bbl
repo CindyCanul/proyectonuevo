@@ -1,0 +1,121 @@
+\begin{thebibliography}{}
+
+\bibitem[Agarwal et~al., 2014]{agarwal2014efficient}
+Agarwal, S., Jain, S., et~al. (2014).
+\newblock Efficient optimal algorithm of task scheduling in cloud computing
+  environment.
+\newblock {\em arXiv preprint arXiv:1404.2076}.
+\newblock Recuperado 2015-08-21.
+
+\bibitem[Aranganathan and Mehata, 2011]{aranganathan2011aco}
+Aranganathan, S. and Mehata, K. (2011).
+\newblock An aco algorithm for scheduling data intensive application with
+  various qos requirements.
+\newblock {\em Int. J. Comput. Appl}, 27(10).
+\newblock Recuperado 2015-08-20.
+
+\bibitem[Calheiros, 2011]{calheiros2011cloudsim}
+Calheiros, R.~N. (2011).
+\newblock Cloudsim: a toolkit for modeling and simulation of cloud computing
+  environments and evaluation of resource provisioning algorithms.
+
+\bibitem[Chen et~al., 2013]{chen2013user}
+Chen, H., Wang, F., Helian, N., and Akanmu, G. (2013).
+\newblock User-priority guided min-min scheduling algorithm for load balancing
+  in cloud computing.
+\newblock In {\em Parallel Computing Technologies (PARCOMPTECH), 2013 National
+  Conference on}, pages 1--8. IEEE.
+\newblock Recuperado 2015-08-23.
+
+\bibitem[Chen and Deng, 2009]{chen2009cloud}
+Chen, Q. and Deng, Q. (2009).
+\newblock Cloud computing and its key techniques.
+\newblock {\em Journal of Computer Applications}.
+\newblock Recuperado 2015-08-20.
+
+\bibitem[Chowdhury et~al., 2012]{ahmed2012advanced}
+Chowdhury, A., Ahmed, M., Ahmed, M., and Rafee, M. M.~H. (2012).
+\newblock An advanced survey on cloud computing and state-of-the-art research
+  issues.
+\newblock {\em IJCSI International Journal of Computer Science Issues},
+  9(1):1694--0814.
+\newblock Recuperado 2015-08-20.
+
+\bibitem[Dakshayini and Guruprasad, 2011]{dakshayini2011optimal}
+Dakshayini, M. and Guruprasad, H. (2011).
+\newblock An optimal model for priority based service scheduling policy for
+  cloud computing environment.
+\newblock {\em International Journal of Computer Applications}, 32(9):23--29.
+\newblock Recuperado 2015-08-23.
+
+\bibitem[Delavar et~al., 2012]{delavar2012rsdc}
+Delavar, A.~G., Javanmard, M., Shabestari, M.~B., and Talebi, M.~K. (2012).
+\newblock Rsdc (reliable scheduling distributed in cloud computing).
+\newblock {\em International Journal of Computer Science, Engineering and
+  Applications (IJCSEA) Vol}, 2.
+\newblock Recuperado 2015-08-22.
+
+\bibitem[Dover et~al., 2013]{redhat}
+Dover, Z., Gordon, S., and Hildred, T. (2013).
+\newblock The technical architecture of red hat enterprise virtualization
+  environments.
+\newblock Recuperado 2015-08-22.
+
+\bibitem[EPI, 8 31]{whatisdatacenter}
+EPI (2015-08-31).
+\newblock What is a data centre.
+\newblock \url{http://www.epi-ap.com/content/28/48/What_is_a_Data_Centre}.
+
+\bibitem[Li et~al., 2014]{li2014greedy}
+Li, J., Feng, L., and Fang, S. (2014).
+\newblock An greedy-based job scheduling algorithm in cloud computing.
+\newblock {\em Journal of Software}, 9(4):921--925.
+\newblock Recuperado 2015-08-21.
+
+\bibitem[Mariscal and Gil-Garcia, 2013]{mariscal2013computo}
+Mariscal, J. and Gil-Garcia, J. (2013).
+\newblock El c{\'o}mputo en la nube en m{\'e}xico: Alcances y desaf{\'\i}os
+  para los sectores p{\'u}blico y privado. cide.
+\newblock Recuperado 2015-08-21.
+
+\bibitem[Nishant and R., 2015]{nishant}
+Nishant, S. and R., K. (2015).
+\newblock Pre-emptable shortest job next scheduling in private cloud
+  computing” in journal of information, knowledge and research computer
+  engineering.
+\newblock In {\em Knowledge and research computer engineering}.
+\newblock Recuperado 2015-08-20.
+
+\bibitem[Parsa and Entezari-Maleki, 2009]{parsa2009rasa}
+Parsa, S. and Entezari-Maleki, R. (2009).
+\newblock Rasa-a new grid task scheduling algorithm.
+\newblock {\em JDCTA}, 3(4):91--99.
+\newblock Recuperado 2015-08-22.
+
+\bibitem[S. and Horacio, 2002]{saroka2002sistemas}
+S., S. and Horacio, R. (2002).
+\newblock {\em Sistemas de informaci{\'o}n en la era digital}.
+\newblock Fundaci{\'o}n OSDE.
+\newblock Recuperado 2015-08-22.
+
+\bibitem[Salot, 2013]{salot2013survey}
+Salot, P. (2013).
+\newblock A survey of various scheduling algorithm in cloud computing
+  environment.
+\newblock {\em IJRET: International Journal of Research in Engineering and
+  Technology, ISSN}.
+\newblock Recuperado 2015-08-21.
+
+\bibitem[Shimpy and Sidhu, 2014]{shimpy2014different}
+Shimpy, E. and Sidhu, M.~J. (2014).
+\newblock Different scheduling algorithms in different cloud environment.
+\newblock {\em algorithms}, 3(9).
+\newblock Recuperado 2015-08-22.
+
+\bibitem[Srinivasan, 2014]{srinivasan2014cloud}
+Srinivasan, S. (2014).
+\newblock Cloud computing evolution.
+\newblock In {\em Cloud Computing Basics}, pages 1--16. Springer.
+\newblock Recuperado 2015-08-31.
+
+\end{thebibliography}

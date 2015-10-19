@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/W32TeX)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: carta.aux
+A level-1 auxiliary file: resumen.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: intro.aux
+A level-1 auxiliary file: capitulouno.aux
+A level-1 auxiliary file: capitulodos.aux
+A level-1 auxiliary file: capitulotres.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: apalike.bst
+A level-1 auxiliary file: glosario.aux
+A level-1 auxiliary file: anexo.aux
+Database file #1: biblio.bib
+Warning--empty publisher in nishant
+You've used 18 entries,
+            1935 wiz_defined-function locations,
+            577 strings with 6944 characters,
+and the built_in function-call counts, 6449 in all, are:
+= -- 648
+> -- 255
+< -- 14
++ -- 94
+- -- 82
+* -- 502
+:= -- 1164
+add.period$ -- 69
+call.type$ -- 18
+change.case$ -- 129
+chr.to.int$ -- 18
+cite$ -- 19
+duplicate$ -- 252
+empty$ -- 430
+format.name$ -- 116
+if$ -- 1249
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 106
+num.names$ -- 54
+pop$ -- 97
+preamble$ -- 1
+purify$ -- 130
+quote$ -- 0
+skip$ -- 196
+stack$ -- 0
+substring$ -- 353
+swap$ -- 24
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 106
+warning$ -- 1
+while$ -- 49
+width$ -- 0
+write$ -- 255
+(There was 1 warning)

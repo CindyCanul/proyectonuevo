@@ -1,0 +1,85 @@
+\documentclass[12pt]{report}
+%\documentclass[oneside,numbers,spanish]{article}
+
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{natbib}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {media/} }
+
+
+
+	
+\title{
+	{Esquemas de distribuci\'on de trabajos para un sistema ERP en la nube}\\
+	{\includegraphics[height=4cm]{escudo_uni}}
+}
+
+
+	
+
+\author{
+	110300083 Canul Canul Cindy Guadalupe \\ 110300083@ucaribe.edu.mx \\
+	110300097 Kumul Uc Cristian Ariel \\ 110300097@ucaribe.edu.mx \\
+	110300079 Peraza Feliciano Jonathan \\ 110300079@ucaribe.edu.mx \\
+}
+
+\date{Day Month Year}
+
+
+\usepackage{fancyhdr} 
+\pagestyle{fancy} 
+
+
+
+\usepackage{hyperref}
+\begin{document}
+	%\maketitle
+	\include{carta}
+	\include{resumen}
+	\include{abstract}
+	
+	
+	\lhead{\textit{\'Indice general}}
+	\chead{}
+	\rhead{\thepage}
+	
+	
+	\tableofcontents
+	
+	\lhead{\textit{\'Indice de figuras}}
+	\chead{}
+	\rhead{\thepage}
+
+	\listoffigures
+	
+	\lhead{\textit{\'Indice de cuadros}}
+	\chead{}
+	\rhead{\thepage}
+	
+	\listoftables
+	
+	\include{intro}
+	\include{capitulouno}
+	\include{capitulodos}
+	\include{capitulotres}
+	\include{conclusion}
+	
+	\bibliographystyle{apalike}
+	%\bibliographystyle{apalike} %apa con numeros
+	
+	\lhead{\textit{Bibliograf\'ia}}
+	\chead{}
+	\rhead{\thepage}
+	
+	\bibliography{biblio}
+	%\renewcommand{\refname}{biblio}
+	
+	\include{glosario} 
+	\include{anexo} 
+\end{document}

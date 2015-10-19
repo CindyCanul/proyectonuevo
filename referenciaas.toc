@@ -1,0 +1,39 @@
+\select@language {spanish}
+\contentsline {chapter}{Resumen}{3}{chapter*.1}
+\contentsline {chapter}{Abstract}{4}{chapter*.2}
+\contentsline {chapter}{Introducci\'on}{10}{chapter*.6}
+\contentsline {section}{Antecedentes y Planteamiento del problema}{10}{section*.7}
+\contentsline {section}{Propuesta de soluci\'on y Justificaci\'on}{11}{section*.8}
+\contentsline {section}{Objetivos}{13}{section*.9}
+\contentsline {section}{Objetivo general}{13}{section*.10}
+\contentsline {section}{Objetivos espec\'ificos}{13}{section*.11}
+\contentsline {section}{Hip\'otesis}{14}{section*.12}
+\contentsline {chapter}{\numberline {1}Marco contextual}{15}{chapter.1}
+\contentsline {section}{Introducci\'on}{15}{section*.13}
+\contentsline {section}{\numberline {1.1}Situaci\'on Actual}{16}{section.1.1}
+\contentsline {section}{\numberline {1.2}Estado del Arte}{17}{section.1.2}
+\contentsline {section}{\numberline {1.3}Marco te\'orico}{18}{section.1.3}
+\contentsline {subsection}{Centro de Datos}{18}{section*.14}
+\contentsline {subsection}{Esquemas de Distribuci\'on de Trabajos}{19}{section*.15}
+\contentsline {subsection}{Balanceo de Cargas}{20}{section*.16}
+\contentsline {subsection}{Migraci\'on}{21}{section*.17}
+\contentsline {subsection}{Sistemas ERP}{21}{section*.18}
+\contentsline {section}{\numberline {1.4}Marco Metodol\'ogico}{21}{section.1.4}
+\contentsline {chapter}{\numberline {2}Desarrollo}{22}{chapter.2}
+\contentsline {section}{Introducci\'on}{23}{section*.19}
+\contentsline {section}{\numberline {2.1}Aplicaci\'on del marco metodol\'ogico y de actividades de experimentaci\'on}{23}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Simulaci\'on del Centro de Datos en la Nube}{23}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{25}{subsection.2.1.2}
+\contentsline {section}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{29}{section*.20}
+\contentsline {section}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{31}{section*.21}
+\contentsline {chapter}{\numberline {3}Resultados}{33}{chapter.3}
+\contentsline {section}{Introducci\'on}{33}{section*.22}
+\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{34}{section.3.1}
+\contentsline {chapter}{Conclusiones}{41}{chapter*.23}
+\contentsline {chapter}{Glosario}{44}{chapter*.25}
+\contentsline {section}{A}{44}{section*.26}
+\contentsline {section}{C}{44}{section*.27}
+\contentsline {section}{E}{44}{section*.28}
+\contentsline {section}{F}{44}{section*.29}
+\contentsline {section}{P}{45}{section*.30}
+\contentsline {chapter}{Anexos}{46}{chapter*.31}
