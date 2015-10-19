@@ -11,13 +11,14 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Caracter\IeC {\'\i }sticas del \textit {datacenter}. Fuente: Elaboraci\IeC {\'o}n propia}}{29}{figure.2.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Caracter\IeC {\'\i }sticas del \textit {Host}. Fuente: Elaboraci\IeC {\'o}n propia}}{29}{figure.2.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Caracter\IeC {\'\i }sticas de las m\IeC {\'a}quinas virtuales. Fuente: Elaboraci\IeC {\'o}n propia}}{30}{figure.2.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Caracter\IeC {\'\i }sticas de las Tareas \textit {(cloudlets)}. Fuente: Elaboraci\IeC {\'o}n propia}}{30}{figure.2.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces \textit {FCFS Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{31}{figure.2.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces \textit {Min-Min Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{31}{figure.2.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces \textit {Max-min Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{32}{figure.2.14}
+\contentsline {figure}{\numberline {11}{\ignorespaces Caracter\IeC {\'\i }sticas de las Tareas \textit {(cloudlets)}. Fuente: Elaboraci\IeC {\'o}n propia}}{31}{figure.2.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces \textit {FCFS Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{32}{figure.2.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces \textit {Min-Min Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{33}{figure.2.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces \textit {Max-min Broker}. Fuente: Elaboraci\IeC {\'o}n propia}}{34}{figure.2.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces \textit {Algoritmos de ordenamientos}. Fuente: Elaboraci\IeC {\'o}n propia}}{35}{figure.2.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {15}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{36}{figure.3.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{37}{figure.3.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia}}{38}{figure.3.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia}}{39}{figure.3.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia}}{40}{figure.3.19}
+\contentsline {figure}{\numberline {15}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{39}{figure.3.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{40}{figure.3.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia}}{41}{figure.3.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia}}{42}{figure.3.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia}}{43}{figure.3.19}

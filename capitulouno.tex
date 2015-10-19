@@ -12,7 +12,7 @@
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
 
-En \'este cap\'itulo se describen algunos marcos conceptuales necesarios para fundamentar y analizar los requisitos de la investigaci\'on, las secciones son las siguientes: Situaci\'on actual, Estado del Arte, Marco Te\'orico y Marco Metodol\'ogico. En la primera secci\'on se muestra c\'omo se encuentra la investigaci\'on en la actualidad, c\'omo se encuentra nacional e internacionalmente y cu\'al es el punto de partida del proyecto; en la siguiente secci\'on se presenta la informaci\'on sobre los diferentes esquemas de distribuci\'on que ser\'an implementados durante la elaborac\'on del proyecto. El Marco te\'orico nos describe los conceptos necesarios para fundamentar y comprender mejor el proyecto y su prop\'osito, finalmente en la \'ultima secci\'on se describe los pasos que se van a seguir para realizar y alcanzar los objetivos del proyecto.
+En \'este cap\'itulo se describen algunos marcos conceptuales necesarios para fundamentar y analizar los requisitos de la investigaci\'on, las secciones son las siguientes: Situaci\'on actual, Estado del Arte, Marco Te\'orico y Marco Metodol\'ogico. En la primera secci\'on se muestra c\'omo se encuentra la investigaci\'on en la actualidad, c\'omo se encuentra nacional e internacionalmente y cu\'al es el punto de partida del proyecto; en la siguiente secci\'on se presenta la informaci\'on sobre los diferentes esquemas de distribuci\'on que ser\'an implementados durante la elaboraci\'on del proyecto. El Marco te\'orico nos describe los conceptos necesarios para fundamentar y comprender mejor el proyecto y su prop\'osito, finalmente en la \'ultima secci\'on se describe los pasos que se van a seguir para realizar y alcanzar los objetivos del proyecto.
 
 \newpage
 
@@ -38,7 +38,7 @@ Existen una gran variedad de algoritmos utilizados en el problema de distribuci\
 
 Los siguientes algoritmos de calendarizaci\'on actualmente est\'an prevaleciendo en la nube:
 \begin{itemize}
-	\item \textit{\textbf{Resource-Aware-Scheduling Algorithm (RASA):}} Parsa, Entezari-Maleki (2009) proponen el algoritmo \textit{RASA}, el cual utiliza las ventajas de dos algoritmos tradicionales \textit{(Max-min y Min-min)} y cubre sus desventajas. Aunque el tiempo limite, la tasa de llegada, costo de ejecución y costo de comunicaci\'on no est\'an considerados (\citeauthor{parsa2009rasa}, \citeyear{parsa2009rasa}).
+	\item \textit{\textbf{Resource-Aware-Scheduling Algorithm (RASA):}} Parsa, Entezari-Maleki (2009) proponen el algoritmo \textit{RASA}, el cual utiliza las ventajas de dos algoritmos tradicionales \textit{(Max-min y Min-min)} y cubre sus desventajas. Aunque el tiempo l\'imite, la tasa de llegada, costo de ejecución y costo de comunicaci\'on no est\'an considerados (\citeauthor{parsa2009rasa}, \citeyear{parsa2009rasa}).
 	
 	
 	\item \textit{\textbf{RSDC (Reliable Scheduling Distributed In Cloud Computing):}} Delevar, Javanmard, Shabestari y Talebi (2012) proponen un algoritmo confiable en un entorno en la nube, en este algoritmo los trabajos importantes son divididos en sub trabajos, de tal manera que se puedan balancear las peticiones (\citeauthor{delavar2012rsdc}, \citeyear{delavar2012rsdc}).
@@ -47,10 +47,10 @@ Los siguientes algoritmos de calendarizaci\'on actualmente est\'an prevaleciendo
 	\item \textit{\textbf{An Optimal Model for Priority based Service Scheduling Policy for Cloud Computing Environment:}} Dakshayini, Gurupased (2011), proponen un nuevo algoritmo de calendarizaci\'on que se basa en la prioridad y un esquema de control de admisi\'on. En este algoritmo, la prioridad se asigna a cada proceso admitido en la cola (\citeauthor{dakshayini2011optimal}, \citeyear{dakshayini2011optimal}) . 
 	
 	
-	\item \textit{\textbf{Pre-emptable Shortest Job Next Scheduling algorithm (PSJN) :}}  Este algoritmo se propone en una nube privada. Utiliza la t\'ecnica de suscripci\'on preferente del algoritmo de \textit{Round Robin} junto con el siguiente proceso m\'as corto \textit{(PSN)}. Brinda beneficios de costos y mejora tiempo de respuesta y tiempo de ejecuci\'on (\citeauthor{nishant}, \citeyear{nishant}). 
+	\item \textit{\textbf{Pre-emptable Shortest Job Next Scheduling algorithm (PSJN):}}  Este algoritmo se propone en una nube privada. Utiliza la t\'ecnica de suscripci\'on preferente del algoritmo de \textit{Round Robin} junto con el siguiente proceso m\'as corto \textit{(PSN)}. Brinda beneficios de costos y mejora tiempo de respuesta y tiempo de ejecuci\'on (\citeauthor{nishant}, \citeyear{nishant}). 
 	
 	
-	\item \textit{\textbf{User-priority Guided Min-min scheduling algorithm:}} Se realiza una mejora para el algoritmo de balanceo de cargas, a trav\'es del algoritmo \textit{Min-min} para la calendarizaci\'on de trabajos con el fin de minimizar el tiempo de terminaci\'on del ultimo trabajo \textit{(makespan)} y maximizar la utilizaci\'on de los recursos (\citeauthor{chen2013user}, \citeyear{chen2013user}). 
+	\item \textit{\textbf{User-priority Guided Min-min scheduling algorithm:}} Se realiza una mejora para el algoritmo de balanceo de cargas, a trav\'es del algoritmo \textit{Min-min} para la calendarizaci\'on de trabajos con el fin de minimizar el tiempo de terminaci\'on del \'ultimo trabajo \textit{(makespan)} y maximizar la utilizaci\'on de los recursos (\citeauthor{chen2013user}, \citeyear{chen2013user}). 
 \end{itemize}
 
 
@@ -101,8 +101,8 @@ Existen varios tipos de algoritmos de calendarizaci\'on, su principal ventaja es
 \begin{itemize}
 	\item \textit{\textbf{FCFS (First Come First Serve) Algorithm:}} significa que el trabajo que llegue primero ser\'a el primero en ser ejecutado.
 	\item \textit{\textbf{Round Robin Algorithm:}} consiste en agregar un tiempo de ejecuci\'on para cada trabajo, si dicho tiempo se agota y el trabajo actual no ha finalizado, pasa a un estado de espera y contin\'ua con el siguiente trabajo, al finalizar el \'ultimo trabajo regresa a revisar si existen trabajos en espera para proceder a ejecutarlas. 
-	\item  \textit{\textbf{Min-Min Algorithm:}} se va ejecutando una por una iniciando por los trabajos de menor tama\'no.
-	\item  \textit{\textbf{Max-Min Algorithm:}} se va ejecutando una por una iniciando por los trabajos de mayor tama\'no.
+	\item  \textit{\textbf{Min-Min Algorithm:}} se va ejecutando una por una iniciando por los trabajos de menor tama\~no.
+	\item  \textit{\textbf{Max-Min Algorithm:}} se va ejecutando una por una iniciando por los trabajos de mayor tama\~no.
 	\item  \textit{\textbf{Most fit task scheduling algorithm:}} este algoritmo busca los elementos m\'as aptos en la cola de trabajos para ejecutarlo primero. Tiene un alto radio de error.
 	\item \textit{\textbf{Priority scheduling algorithm:}} la idea b\'asica es que a cada proceso se le asigna una prioridad, y dependiendo a las prioridades de los dem\'as procesos es c\'omo se ejecutar\'an cada uno de ellos.
 \end{itemize}
