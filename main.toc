@@ -24,16 +24,16 @@
 \contentsline {section}{\numberline {2.1}Aplicaci\'on del marco metodol\'ogico y de actividades de experimentaci\'on}{23}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Simulaci\'on del Centro de Datos en la Nube}{23}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{25}{subsection.2.1.2}
-\contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{29}{section*.20}
-\contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{31}{section*.21}
-\contentsline {chapter}{\numberline {3}Resultados}{36}{chapter.3}
-\contentsline {section}{Introducci\'on}{36}{section*.22}
-\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{37}{section.3.1}
-\contentsline {chapter}{Conclusiones}{44}{chapter*.23}
-\contentsline {chapter}{Glosario}{47}{chapter*.25}
-\contentsline {section}{A}{47}{section*.26}
-\contentsline {section}{C}{47}{section*.27}
-\contentsline {section}{E}{47}{section*.28}
-\contentsline {section}{F}{47}{section*.29}
-\contentsline {section}{P}{48}{section*.30}
-\contentsline {chapter}{Anexos}{49}{chapter*.31}
+\contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{30}{section*.20}
+\contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{33}{section*.21}
+\contentsline {chapter}{\numberline {3}Resultados}{38}{chapter.3}
+\contentsline {section}{Introducci\'on}{38}{section*.22}
+\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{39}{section.3.1}
+\contentsline {chapter}{Conclusiones}{46}{chapter*.23}
+\contentsline {chapter}{Glosario}{49}{chapter*.25}
+\contentsline {section}{A}{49}{section*.26}
+\contentsline {section}{C}{49}{section*.27}
+\contentsline {section}{E}{49}{section*.28}
+\contentsline {section}{F}{49}{section*.29}
+\contentsline {section}{P}{50}{section*.30}
+\contentsline {chapter}{Anexos}{51}{chapter*.31}
