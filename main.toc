@@ -26,14 +26,15 @@
 \contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{25}{subsection.2.1.2}
 \contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{30}{section*.20}
 \contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{33}{section*.21}
-\contentsline {chapter}{\numberline {3}Resultados}{38}{chapter.3}
-\contentsline {section}{Introducci\'on}{38}{section*.22}
-\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{39}{section.3.1}
-\contentsline {chapter}{Conclusiones}{46}{chapter*.23}
-\contentsline {chapter}{Glosario}{49}{chapter*.25}
-\contentsline {section}{A}{49}{section*.26}
-\contentsline {section}{C}{49}{section*.27}
-\contentsline {section}{E}{49}{section*.28}
-\contentsline {section}{F}{49}{section*.29}
-\contentsline {section}{P}{50}{section*.30}
-\contentsline {chapter}{Anexos}{51}{chapter*.31}
+\contentsline {subsection}{\numberline {2.1.3}Mejorar el costo de procesamiento y el tiempo de ejecuci\IeC {\'o}n}{37}{subsection.2.1.3}
+\contentsline {chapter}{\numberline {3}Resultados}{39}{chapter.3}
+\contentsline {section}{Introducci\'on}{39}{section*.23}
+\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{40}{section.3.1}
+\contentsline {chapter}{Conclusiones}{47}{chapter*.24}
+\contentsline {chapter}{Glosario}{51}{chapter*.26}
+\contentsline {section}{A}{51}{section*.27}
+\contentsline {section}{C}{51}{section*.28}
+\contentsline {section}{E}{51}{section*.29}
+\contentsline {section}{F}{51}{section*.30}
+\contentsline {section}{P}{52}{section*.31}
+\contentsline {chapter}{Anexos}{53}{chapter*.32}

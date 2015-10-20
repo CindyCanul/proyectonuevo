@@ -61,6 +61,12 @@ Dover, Z., Gordon, S., and Hildred, T. (2013).
   environments.
 \newblock Recuperado 2015-08-22.
 
+\bibitem[Eberhart and Kennedy, 1995]{eberhart1995}
+Eberhart, R.~C. and Kennedy, J. (1995).
+\newblock A new optimizer using particle swarm theory.
+\newblock In {\em Proceedings of the sixth international symposium on micro
+  machine and human science}, volume~1, pages 39--43. New York, NY.
+
 \bibitem[EPI, 8 31]{whatisdatacenter}
 EPI (2015-08-31).
 \newblock What is a data centre.
@@ -86,11 +92,28 @@ Nishant, S. and R., K. (2015).
 \newblock In {\em Knowledge and research computer engineering}.
 \newblock Recuperado 2015-08-20.
 
+\bibitem[Osman and Kelly, 2012]{osman2012}
+Osman, I.~H. and Kelly, J.~P. (2012).
+\newblock {\em Meta-heuristics: theory and applications}.
+\newblock Springer Science \& Business Media.
+
+\bibitem[Pandey et~al., 2010]{pandey2010}
+Pandey, S., Wu, L., Guru, S.~M., and Buyya, R. (2010).
+\newblock A particle swarm optimization-based heuristic for scheduling workflow
+  applications in cloud computing environments.
+\newblock In {\em Advanced Information Networking and Applications (AINA), 2010
+  24th IEEE International Conference on}, pages 400--407. IEEE.
+
 \bibitem[Parsa and Entezari-Maleki, 2009]{parsa2009rasa}
 Parsa, S. and Entezari-Maleki, R. (2009).
 \newblock Rasa-a new grid task scheduling algorithm.
 \newblock {\em JDCTA}, 3(4):91--99.
 \newblock Recuperado 2015-08-22.
+
+\bibitem[Poli et~al., 2007]{poli2007}
+Poli, R., Kennedy, J., and Blackwell, T. (2007).
+\newblock Particle swarm optimization.
+\newblock {\em Swarm intelligence}, 1(1):33--57.
 
 \bibitem[S. and Horacio, 2002]{saroka2002sistemas}
 S., S. and Horacio, R. (2002).
