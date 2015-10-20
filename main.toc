@@ -13,28 +13,29 @@
 \contentsline {section}{\numberline {1.1}Situaci\'on Actual}{16}{section.1.1}
 \contentsline {section}{\numberline {1.2}Estado del Arte}{17}{section.1.2}
 \contentsline {section}{\numberline {1.3}Marco te\'orico}{18}{section.1.3}
-\contentsline {subsection}{Centro de Datos}{18}{section*.14}
+\contentsline {subsection}{Centro de Datos}{19}{section*.14}
 \contentsline {subsection}{Esquemas de Distribuci\'on de Trabajos}{19}{section*.15}
 \contentsline {subsection}{Balanceo de Cargas}{20}{section*.16}
 \contentsline {subsection}{Migraci\'on}{21}{section*.17}
 \contentsline {subsection}{Sistemas ERP}{21}{section*.18}
 \contentsline {section}{\numberline {1.4}Marco Metodol\'ogico}{21}{section.1.4}
-\contentsline {chapter}{\numberline {2}Desarrollo}{22}{chapter.2}
-\contentsline {section}{Introducci\'on}{23}{section*.19}
-\contentsline {section}{\numberline {2.1}Aplicaci\'on del marco metodol\'ogico y de actividades de experimentaci\'on}{23}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Simulaci\'on del Centro de Datos en la Nube}{23}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{25}{subsection.2.1.2}
-\contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{30}{section*.20}
-\contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{33}{section*.21}
-\contentsline {subsection}{\numberline {2.1.3}Mejorar el costo de procesamiento y el tiempo de ejecuci\IeC {\'o}n}{37}{subsection.2.1.3}
-\contentsline {chapter}{\numberline {3}Resultados}{39}{chapter.3}
-\contentsline {section}{Introducci\'on}{39}{section*.23}
-\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{40}{section.3.1}
-\contentsline {chapter}{Conclusiones}{47}{chapter*.24}
-\contentsline {chapter}{Glosario}{51}{chapter*.26}
-\contentsline {section}{A}{51}{section*.27}
-\contentsline {section}{C}{51}{section*.28}
-\contentsline {section}{E}{51}{section*.29}
-\contentsline {section}{F}{51}{section*.30}
-\contentsline {section}{P}{52}{section*.31}
-\contentsline {chapter}{Anexos}{53}{chapter*.32}
+\contentsline {chapter}{\numberline {2}Desarrollo}{23}{chapter.2}
+\contentsline {section}{Introducci\'on}{24}{section*.19}
+\contentsline {section}{\numberline {2.1}Aplicaci\'on del marco metodol\'ogico y de actividades de experimentaci\'on}{24}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Simulaci\'on del Centro de Datos en la Nube}{24}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{26}{subsection.2.1.2}
+\contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{31}{section*.20}
+\contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{34}{section*.21}
+\contentsline {subsection}{\numberline {2.1.3}Mejorar el costo de procesamiento y el tiempo de ejecuci\IeC {\'o}n}{38}{subsection.2.1.3}
+\contentsline {subsection}{Algoritmo PSO y un ambiente en la nube}{39}{section*.22}
+\contentsline {chapter}{\numberline {3}Resultados}{40}{chapter.3}
+\contentsline {section}{Introducci\'on}{40}{section*.23}
+\contentsline {section}{\numberline {3.1}Tiempo de ejecuci\'on y costo de procesamiento}{41}{section.3.1}
+\contentsline {chapter}{Conclusiones}{48}{chapter*.24}
+\contentsline {chapter}{Glosario}{52}{chapter*.26}
+\contentsline {section}{A}{52}{section*.27}
+\contentsline {section}{C}{52}{section*.28}
+\contentsline {section}{E}{52}{section*.29}
+\contentsline {section}{F}{52}{section*.30}
+\contentsline {section}{P}{53}{section*.31}
+\contentsline {chapter}{Anexos}{54}{chapter*.32}

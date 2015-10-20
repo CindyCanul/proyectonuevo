@@ -21,6 +21,8 @@ En base de los dos primeros puntos descritos anteriormente en el marco metodol\'
 \begin{itemize}
 	\item \textbf{Simular:} Se implementar\'a a manera de simulaci\'on un centro de datos con un entorno en la nube, las m\'aquinas virtuales y el servidor inicializador que lo conforman.
 	\item \textbf{Implementar:} En el centro de datos se desarrollar\'an los algoritmos de calendarizaci\'on que se mencionan con antelaci\'on.
+	\item \textbf{Evaluar:} Se simular\'a el comportamiento de las peticiones de un sistema contemplando los distintos escenarios del \textit{ERP} y consumiendo el servicio en la nube \textit{(SaaS)}, para conocer el rendimiento en tiempo de ejecuci\'on de los algoritmos.
+	\item \textbf{Mejorar:} Se propondr\'a una mejora a alg\'un algoritmo de acuerdo a las necesidades y comportamiento de un sistema \textit{ERP} en la nube.
 \end{itemize}
 
 \subsection{Simulaci\'on del Centro de Datos en la Nube}
@@ -140,12 +142,12 @@ A continuaci\'on se muestran algunas capturas del c\'odigo para la implementaci\
 \subsection*{Configuración de Elementos del \textit{Datacenter} y \textit{DatacenterBrokers} para Algoritmos de Calendarización}
 \addcontentsline{toc}{subsection}{Configuración de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarización}
 
-\setcounter{figure}{7}
+\setcounter{figure}{8}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/caracteristicas_datacenter}
-	\caption{Características del \textit{datacenter}. Fuente: Elaboración propia}
+	\caption{Características del \textit{datacenter}. Fuente: Elaboración propia.}
 	\label{fig:DCar}
 \end{figure}
 
@@ -154,12 +156,12 @@ Como primer paso,  debemos de configurar las caracter\'isticas que tendrá nuest
 
 \newpage
 
-\setcounter{figure}{8}
+\setcounter{figure}{9}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/caracteristicas_host}
-	\caption{Características del \textit{Host}. Fuente: Elaboración propia}
+	\caption{Características del \textit{Host}. Fuente: Elaboración propia.}
 	\label{fig:HCar}
 	
 \end{figure}
@@ -168,12 +170,12 @@ De igual manera tenemos que asignar las caracter\'isticas que tendr\'a cada \tex
 
 \newpage
 
-\setcounter{figure}{9}
+\setcounter{figure}{10}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{media/creacion_vm}
-	\caption{Características de las máquinas virtuales. Fuente: Elaboración propia}
+	\caption{Características de las máquinas virtuales. Fuente: Elaboración propia.}
 	\label{fig:VCar}
 \end{figure}
 
@@ -181,12 +183,12 @@ De igual manera tenemos que asignar las caracter\'isticas que tendr\'a cada \tex
 Continuando con las configuraciones, en la Figura (\ref{fig:VCar}) se muestran las caracter\'isticas utilizadas en las m\'aquinas virtuales, las cuales son: tamaño de la imagen, memoria RAM virtual, n\'umero de instrucciones por segundo, ancho de banda y el n\'umero de procesadores.
 
 
-\setcounter{figure}{10}
+\setcounter{figure}{11}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/creacion_cloudlet}
-	\caption{Características de las Tareas \textit{(cloudlets)}. Fuente: Elaboración propia}
+	\caption{Características de las Tareas \textit{(cloudlets)}. Fuente: Elaboración propia.}
 	\label{fig:TCar}
 \end{figure} 
 
@@ -202,23 +204,23 @@ Adem\'as de los recursos, se debe de hacer la configuraci\'on de las tareas a si
 Partiendo del Esquema que se muestra en la figura (\ref{fig:TrabajoCloudsim}), el trabajo presentado se lleva a cabo en la parte de Tareas (\textit{cloudlets}) y M\'aquinas Virtuales (\textit{Virtual Machines}) ya que se pretende mejorar un algoritmo de calendarizaci\'on de tareas.
 Para ello seg\'un muestra el diagrama, el encargado de asignar cada tarea en una m\'aquina virtual es el \textit{datacenter broker}, el cual toma la lista de tareas as\'i como la lista de m\'aquinas virtuales, y de acuerdo a alg\'un algoritmo realiza la asignaci\'on de cada una de las tareas en las distintas m\'aquinas virtuales disponibles.
 
-\setcounter{figure}{11}
+\setcounter{figure}{12}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/FCFS_broker}
-	\caption{\textit{FCFS Broker}. Fuente: Elaboración propia}
+	\caption{\textit{FCFS Broker}. Fuente: Elaboración propia.}
 	\label{fig:fcfsBroker}
 \end{figure}
 
 La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre la lista de tareas y la asigna en la m\'aquina virtual correspondiente, calculando la tarea actual $i$ en la m\'aquina virtual \textbf{$i\%reqVms$} donde \textbf{$reqVms$} es el n\'umero de m\'aquinas virtuales.
 
-\setcounter{figure}{12}
+\setcounter{figure}{13}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/minmin_broker}
-	\caption{\textit{Min-Min Broker}. Fuente: Elaboración propia}
+	\caption{\textit{Min-Min Broker}. Fuente: Elaboración propia.}
 	\label{fig:minminBroker}
 \end{figure}
 
@@ -227,12 +229,12 @@ La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre 
 En la Figura (\ref{fig:minminBroker}) tenemos la implementaci\'on del algoritmo \textit{Min-Min} en el cual podemos apreciar el ordenamiento de la lista antes de pasar a  la asignaci\'on de las m\'aquinas virtuales.
 
 \newpage
-\setcounter{figure}{13}
+\setcounter{figure}{14}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/maxmin_broker}
-	\caption{\textit{Max-min Broker}. Fuente: Elaboración propia}
+	\caption{\textit{Max-min Broker}. Fuente: Elaboración propia.}
 	\label{fig:maxminBroker}
 \end{figure}
 
@@ -241,24 +243,24 @@ En la Figura (\ref{fig:maxminBroker}) observamos la implementaci\'on del algorit
 \newpage
 
 
-%\setcounter{figure}{14}
+\setcounter{figure}{15}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{media/ordenamientos}
-	\caption{\textit{Algoritmos de ordenamientos}. Fuente: Elaboración propia}
+	\caption{\textit{Algoritmos de ordenamientos}. Fuente: Elaboración propia.}
 	\label{fig:sortRevert}
 \end{figure}
 
 En la Figura (\ref{fig:sortRevert}) tenemos la implementaci\'on de los m\'etodos de ordenamiento utilizados, el \textbf{sort} utilizado para ordenar las tareas de menor a mayor de acuerdo al tamaño y el \textbf{revert} de forma inversa.
 
 \newpage
-
+\setcounter{figure}{16}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.4]{media/RRBroker}
-	\caption{\textit{Round Robin Broker}. Fuente: Elaboración propia}
+	\caption{\textit{Round Robin Broker}. Fuente: Elaboración propia.}
 	\label{fig:RRBroker}
 \end{figure}
 
@@ -267,18 +269,18 @@ En la Figura (\ref{fig:RRBroker}) se muestra la implementación del \textit{Brok
 
 \subsection{Mejorar el costo de procesamiento y el tiempo de ejecución}
 
-El objetivo de éste proyecto es minimizar el tiempo de ejecución y el costo de procesamiento de acuerdo a los recursos heterogéneos del centro de datos. Para ello se hará la  implementación de una meta-heurística con un método llamado Optimización por Enjambre de Partículas \textit{PSO} (\textit{Particle Swarm Optimization}).
+El objetivo de éste proyecto es minimizar el tiempo de ejecución y el costo de procesamiento de acuerdo a los recursos heterogéneos del centro de datos. Para ello se hará la  implementación de una \textit{meta-heurística} con un método llamado Optimización por Enjambre de Partículas \textit{PSO} (\textit{Particle Swarm Optimization}).\\
 
-Optimización por Enjambre de Partículas (\textit{PSO}) es una técnica de optimización basada en la búsqueda de un óptimo global, introducida por Kennedy and Eberhart.\cite{pandey2010} 
+Optimización por Enjambre de Partículas (\textit{PSO}) es una técnica de optimización basada en la búsqueda de un óptimo global, introducida por Kennedy and Eberhart \cite{pandey2010}. 
 
-Se eligió  \textit{PSO} debido al concepto simple que tiene\cite{poli2007},  la implementación requiere de simples operaciones matemáticas que en términos de computación no consume memoria  y la velocidad de convergencia es relativamente rápida dependiendo del número de partículas.\cite{eberhart1995}
-Está claro que como toda metaheurística, PSO no garantiza la obtención de una solución óptima en todos los casos.\cite{osman2012}
+Se eligió  \textit{PSO} debido al concepto simple que tiene \cite{poli2007},  la implementación requiere de simples operaciones matemáticas que en términos de computación no consume memoria  y la velocidad de convergencia es relativamente rápida dependiendo del número de partículas \cite{eberhart1995}.\\ 
+Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtención de una solución óptima en todos los casos.\cite{osman2012}
 
-\subsection*{Algoritmo PSO y un ambiente en la nube}
+\subsection*{Algoritmo \textit{PSO} y un ambiente en la nube}
+\addcontentsline{toc}{subsection}{Algoritmo PSO y un ambiente en la nube}
+\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda \cite{poli2007}.
 
-\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad).Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda.\cite{poli2007}
-
-Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula i tiene la misma dimensión n y es representada de la siguiente manera\cite{pandey2010}:
+Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera \cite{pandey2010}:
 
 \[X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  \]
 
