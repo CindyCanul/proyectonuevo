@@ -271,33 +271,33 @@ En la Figura (\ref{fig:RRBroker}) se muestra la implementación del \textit{Brok
 
 El objetivo de éste proyecto es minimizar el tiempo de ejecución y el costo de procesamiento de acuerdo a los recursos heterogéneos del centro de datos. Para ello se hará la  implementación de una \textit{meta-heurística} con un método llamado Optimización por Enjambre de Partículas \textit{PSO} (\textit{Particle Swarm Optimization}).\\
 
-Optimización por Enjambre de Partículas (\textit{PSO}) es una técnica de optimización basada en la búsqueda de un óptimo global, introducida por Kennedy and Eberhart \cite{pandey2010}. 
+Optimización por Enjambre de Partículas (\textit{PSO}) es una técnica de optimización basada en la búsqueda de un óptimo global, introducida por Kennedy and Eberhart (\cite{pandey2010}). 
 
-Se eligió  \textit{PSO} debido al concepto simple que tiene \cite{poli2007},  la implementación requiere de simples operaciones matemáticas que en términos de computación no consume memoria  y la velocidad de convergencia es relativamente rápida dependiendo del número de partículas \cite{eberhart1995}.\\ 
-Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtención de una solución óptima en todos los casos.\cite{osman2012}
+Se eligió  \textit{PSO} debido al concepto simple que tiene (\cite{poli2007}),  la implementación requiere de simples operaciones matemáticas que en términos de computación no consume memoria  y la velocidad de convergencia es relativamente rápida dependiendo del número de partículas (\cite{eberhart1995}).\\ 
+Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtención de una solución óptima en todos los casos (\cite{osman2012}).
 
 \subsection*{Algoritmo \textit{PSO} y un ambiente en la nube}
 \addcontentsline{toc}{subsection}{Algoritmo PSO y un ambiente en la nube}
-\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda \cite{poli2007}.
+\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda (\cite{poli2007}).
 
-Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera \cite{pandey2010}:$X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  $.
+Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera (\cite{pandey2010}): $X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  $.
 
 Para la simulación en \textit{CloudSim} éstas partículas serán las tareas en el centro de datos, $ = \{T_1 , T_2 , ... T_n\}  $.
 
 %De igual manera las dependencias de los datos es representado por $E$,  que es, $f_j,k = (T_j,T_k) \in E$, en otras palabras $E$ es el dato producido por $T_j$ y consumido por $T_k$. 
 
-En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j\}$, y un conjunto de tareas $T = \{1,...,k\}$. Entonces se asume que el \textit{"promedio"} del tiempo de procesamiento de una tarea $T_k$ en la máquina virtual $VM_j$ para un tamaño de tarea conocido.
+En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j\}$, y un conjunto de tareas $T = \{1,...,k\}$. Entonces se asume que el \textit{"promedio"} del tiempo de procesamiento de una tarea $T_k$ en la máquina virtual $VM_j$ para un tamaño de tarea conocido.\\
 
 
 
 
 \begin{algorithm} 
 	\begin{algorithmic}[1]
-		\State El número de partículas será igual al número de tareas en $ \{ t_i \} \in T $
-		\State Se inicializa la posición de las partículas aleatoriamente de $VM = 1,...,j $ y con velocidad aleatoria $v_i$
-		\State Para cada partícula, calcular $fitness value$
-		\State Si $fitness value$ es mejor que el anterior $pbest$, igualar $fitness value$ como el nuevo $pbest$
-		\State Seleccionar la mejor partícula como $gbest$
+		\State El número de partículas será igual al número de tareas en $ \{ t_i \} \in T $.
+		\State Se inicializa la posición de las partículas aleatoriamente de $VM = 1,...,j $ y con velocidad aleatoria $v_i$.
+		\State Para cada partícula, calcular $fitness value$.
+		\State Si $fitness value$ es mejor que el anterior $pbest$, igualar $fitness value$ como el nuevo $pbest$.
+		\State Seleccionar la mejor partícula como $gbest$.
 		\State Para todas las partículas, calcular la velocidad y actualizar su posición.
 		\State Si no se alcanza el máximo número de iteraciones, repetir el paso 3.
 		
@@ -306,10 +306,11 @@ En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j
 	\label{alg:PSO}
 \end{algorithm}
 
+
 En el algoritmo 1 se muestran los pasos del PSO. Inicia con una inicialización aleatoria de la posición y velocidad de las partículas. Para la simulación las partículas serán las tareas en el centro de datos.
 El valor asignado a la dimensión de las partículas son los índices de los recursos (Máquinas Virtuales). Por lo tanto cada tarea representa un mapeo de una tarea en todas las máquinas virtuales. Entonces la dimensión de una partícula depende del número de máquinas virtuales.
 Para cada partícula se calcula un $fitnessvalue$ que es el óptimo local al nivel de partícula se evalúa y se actualiza. 
 Después se evalúa la mejor partícula como $gbest$ que sería el óptimo del enjambre.
-Se delimita un número $m$, mientras no se llegue al límite la iteración continua.Esto para no entrar a un ciclo que nunca termina, ya que PSO  no garantiza la obtención de una solución óptima en todos los casos\cite{osman2012}.
+Se delimita un número $m$, mientras no se llegue al límite la iteración continua. Esto para no entrar a un ciclo que nunca termina, ya que PSO  no garantiza la obtención de una solución óptima en todos los casos (\cite{osman2012}).
 
 %ver la seccion anexo
