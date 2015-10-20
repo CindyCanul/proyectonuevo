@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.16)  19 OCT 2015 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2015.10.16)  19 OCT 2015 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2584,13 +2584,13 @@ LaTeX Info: Redefining \% on input line 24.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A8EF39AEF0B19D536B9E4E87AA83404D;2539.
+(rerunfilecheck)             Checksum: 5835AE2C7431ED0FC2C3A9DE6DFC9AD7;2543.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
  ) 
 Here is how much of TeX's memory you used:
  7123 strings out of 493054
  101651 string characters out of 6138326
- 202039 words of memory out of 5000000
+ 203039 words of memory out of 5000000
  10336 multiletter control sequences out of 15000+600000
  10086 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2602,7 +2602,7 @@ dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2015/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti12.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb>
-Output written on main.pdf (49 pages, 1414193 bytes).
+Output written on main.pdf (49 pages, 1414179 bytes).
 PDF statistics:
  714 PDF objects out of 1000 (max. 8388607)
  615 compressed objects within 7 object streams

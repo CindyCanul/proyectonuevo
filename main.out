@@ -23,8 +23,8 @@
 \BOOKMARK [1][-]{section.2.1}{Aplicaci\363n del marco metodol\363gico y de actividades de experimentaci\363n}{chapter.2}% 23
 \BOOKMARK [2][-]{subsection.2.1.1}{Simulaci\363n del Centro de Datos en la Nube}{section.2.1}% 24
 \BOOKMARK [2][-]{subsection.2.1.2}{Implementaci\363n de los Algoritmos}{section.2.1}% 25
-\BOOKMARK [1][-]{section*.20}{Configuraci\363n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\363n}{chapter.2}% 26
-\BOOKMARK [1][-]{section*.21}{DatacenterBrokers para Algoritmos de Calendarizaci\363n}{chapter.2}% 27
+\BOOKMARK [2][-]{section*.20}{Configuraci\363n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\363n}{section.2.1}% 26
+\BOOKMARK [2][-]{section*.21}{DatacenterBrokers para Algoritmos de Calendarizaci\363n}{section.2.1}% 27
 \BOOKMARK [0][-]{chapter.3}{Resultados}{}% 28
 \BOOKMARK [1][-]{section*.22}{Introducci\363n}{chapter.3}% 29
 \BOOKMARK [1][-]{section.3.1}{Tiempo de ejecuci\363n y costo de procesamiento}{chapter.3}% 30
