@@ -99,6 +99,7 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 
 
 \newpage
+
 \setcounter{figure}{17}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
@@ -112,8 +113,9 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 
 En la figura (\ref{fig:tiempo}), se puede observar el promedio del tiempo de ejecuci\'on en \emph{ms} para diferentes cantidades de tareas (de 100 a 500). A primera vista con el algoritmo \textit{FCFS} y \textit{Min-Min} se mantiene un tiempo de ejecuci\'on sin muchos cambios a pesar del aumento en la carga de tareas, a diferencia del algoritmo \textit{Max-Min} que aument\'o el tiempo de ejecuci\'on a medida que se increment\'o el n\'umero de tareas.
 
-
+\label{etiqueta}
 \newpage
+
 \setcounter{figure}{18}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
@@ -125,14 +127,14 @@ En la figura (\ref{fig:tiempo}), se puede observar el promedio del tiempo de eje
 
 
 El costo de procesamiento, de acuerdo a cada algoritmo, se puede observar en la figura (\ref{fig:costo}), en donde el algoritmo \textit{FCFS} tiene un incremento dr\'astico al realizar la prueba con 500 tareas. El algoritmo \textit{Max-Min} se conserv\'o sin muchos cambios apesar de la cantidad de tareas, mientras que \textit{Min-Min} tiene un menor costo de procesamiento cuando las tareas son inferiores a 300.
-
+\label{etiqueta2}
 \newpage
 
 \setcounter{figure}{19}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
-	\includegraphics[scale=0.5]{media/fcfs}
+	\includegraphics[scale=0.6]{media/fcfs}
 	\caption{Tiempo ejecuci\'on 50 muestras \textit{FCFS}, Fuente: Elaboraci\'on propia.}
 	\label{fig:ejecucion}
 \end{figure}
@@ -146,7 +148,7 @@ Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
-	\includegraphics[scale=0.5]{media/max-min}
+	\includegraphics[scale=0.6]{media/maxmin}
 	\caption{Tiempo ejecuci\'on 50 muestras \textit{Max-Min}, Fuente: Elaboraci\'on propia.}
 	\label{fig:maxmin}
 \end{figure}
@@ -161,13 +163,36 @@ Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
-	\includegraphics[scale=0.5]{media/min-min}
+	\includegraphics[scale=0.6]{media/minmin}
 	\caption{Tiempo ejecuci\'on 50 muestras \textit{Min-Min}, Fuente: Elaboraci\'on propia.}
 	\label{fig:minmin}
 \end{figure}
 
+En la parte de arriba se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}). Por último, en la figura (\ref{fig:roundrobin}) podemos visualizar la gráfica correspondiente al algoritmo \textit{Round Robin}.
 
-Por \'ultimo se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}).
+\setcounter{figure}{22}
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!] 
+	\centering
+	\includegraphics[scale=0.6]{media/roundrobin}
+	\caption{Tiempo ejecuci\'on 50 muestras \textit{Round Robin}, Fuente: Elaboraci\'on propia.}
+	\label{fig:roundrobin}
+\end{figure}
+
+\newpage
+
+
+
+\setcounter{figure}{23}
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!] 
+	\centering
+	\includegraphics[scale=0.7]{media/figure}
+	\caption{Tiempo ejecuci\'on 50 muestras de todos los algoritmos, Fuente: Elaboraci\'on propia.}
+	\label{fig:figure}
+\end{figure}
+
+La figura (\ref{fig:figure}) muestra una comparativa de los cuatro algoritmos mostrados anteriormente. Durante la evaluación de los algoritmos se tomaron en cuenta dos datos estadísticos: la desviación estandar y el promedio que fue descrito en las páginas \pageref{etiqueta} y \pageref{etiqueta2}.
 
 
 \setcounter{table}{4}
@@ -179,10 +204,12 @@ Por \'ultimo se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo
 		{\bf Algoritmo} & \multicolumn{1}{l}{{\bf Desviaci\'on est\'andar}} \\ \midrule
 		FCFS & 11.00619 \\
 		MAX-MIN & 8.91444 \\
-		MIN-MIN & 11.25613 \\ \bottomrule
+		MIN-MIN & 11.25613 \\ 
+		ROUND ROBIN & 11.66722 \\ \bottomrule
+		
 	\end{tabular}
 	\caption{Desviaci\'on est\'andar del tiempo de ejecuci\'on, Fuente: Elaboraci\'on propia.}
 	\label{tiempotabla}
 \end{table}
 
-Observando la desviaci\'on est\'andar de \'estas muestras anteriores, los algoritmo \textit{Min-Min} y \textit{FCFS} tuvieron m\'as variaciones en las muestras con respecto a la media, mientras que el \textit{Max-Min} tuvo las variaciones por debajo de las dos anteriores (Cuadro \ref{tiempotabla}).
+Observando la desviaci\'on est\'andar de \'estas muestras anteriores, los algoritmo \textit{Min-Min}, \textit{Round Robin} y \textit{FCFS} tuvieron m\'as variaciones en las muestras con respecto a la media, mientras que el \textit{Max-Min} tuvo las variaciones por debajo de las dos anteriores (Cuadro \ref{tiempotabla}).

@@ -128,11 +128,23 @@ Existen tres pol\'iticas para el balanceo de cargas:
 \addcontentsline{toc}{subsection}{Migraci\'on}
 
 La migraci\'on se utiliza para hacer cumplir las pol\'iticas dentro del balanceo de cargas. La migraci\'on de una m\'aquina virtual toma lugar de acuerdo a las pol\'iticas de balanceo de cargas para un \textit{cluster} y la demanda actual sobre los \textit{hosts} dentro de dicho \textit{cluster}. La migraci\'on de igual manera puede ser configurada para ocurrir autom\'aticamente cuando un \textit{host} es bloqueado o movido a modo de mantenimiento (\citeauthor{redhat}, \citeyear{redhat}).
+
 \subsection*{Sistemas \textit{ERP}}
 \addcontentsline{toc}{subsection}{Sistemas ERP}
 
 La sigla \textit{ERP}, en ingl\'es \textit{Enterprise Resource Planning}, significa Planificaci\'on de los Recursos de la Empresa. Un sistema \textit{ERP} constituye un marco de trabajo que incluye aplicaciones comerciales, administrativas (finanzas, contabilidad), recursos humanos, planeamiento de manufactura y gesti\'on de proyectos (\citeauthor{saroka2002sistemas}, \citeyear{saroka2002sistemas}). 
 
+\subsection*{Tiempo de ejecución}
+\addcontentsline{toc}{subsection}{Tiempo de ejecución}
+
+Período en el que un programa es ejecutado por el sistema operativo. El período comienza cuando el programa es llevado a la memoria primaria y comienzan a ejecutarse sus instrucciones. El período finaliza cuando el programa envía la señal de término (normal o anormal) al sistema operativo (\cite{redhat}).
+
+\subsection*{Costo de procesamiento}
+\addcontentsline{toc}{subsection}{Costo de procesamiento}
+
+Costo o esfuerzo que utiliza una máquina virtual para ejecutar una tarea (\cite{redhat}). 
+
+\newpage
 
 \section{Marco Metodol\'ogico}
 
@@ -140,10 +152,10 @@ A continuaci\'on se propone la siguiente metodolog\'ia para llevar a cabo el pro
 
 \begin{itemize}
 	\item \textbf{Simular:} Se implementar\'a a manera de simulaci\'on un centro de datos con un entorno en la nube, las m\'aquinas virtuales y el servidor inicializador que lo conforman.
-	\item \textbf{Implementar:} En el centro de datos se desarrollar\'an los algoritmos de calendarizaci\'on que se mencionan con antelaci\'on.
-	\item \textbf{Evaluar:} Se simular\'a el comportamiento de las peticiones de un sistema contemplando los distintos escenarios del \textit{ERP} y consumiendo el servicio en la nube \textit{(SaaS)}, para conocer el rendimiento en tiempo de ejecuci\'on de los algoritmos.
+	\item \textbf{Implementar:} En el centro de datos se desarrollar\'an los algoritmos de calendarizaci\'on: \textit{FCFS, Max-min, Min-min y Round Robin}.
+	\item \textbf{Evaluar:} Se simular\'a el comportamiento de las peticiones de un sistema contemplando los distintos escenarios del \textit{ERP} y consumiendo el servicio en la nube \textit{(SaaS)}, para conocer el rendimiento en tiempo de ejecuci\'on y costo de procesamiento de los algoritmos.
 	\item \textbf{Mejorar:} Se propondr\'a una mejora a alg\'un algoritmo de acuerdo a las necesidades y comportamiento de un sistema \textit{ERP} en la nube.
-	\item \textbf{Comparar:} Se realizar\'a una comparativa de tiempo de ejecuci\'on entre la versi\'on mejorada y la original para el caso de estudio de un sistema \textit{ERP}.
+	\item \textbf{Comparar:} Se realizar\'a una comparativa del tiempo de ejecuci\'on y el costo de procesamiento entre la versi\'on mejorada y la original para el caso de estudio de un sistema \textit{ERP}.
 \end{itemize}
 
 

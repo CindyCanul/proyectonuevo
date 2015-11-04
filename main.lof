@@ -3,7 +3,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2}{\ignorespaces Esquema general del C\'omputo en la Nube, Fuente: Elaboraci\'on propia.}}{19}{figure.1.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3}{\ignorespaces Estilo de Trabajo de \textit {CloudSim}, Fuente: Chatterjee et al.}}{25}{figure.2.3}
+\contentsline {figure}{\numberline {3}{\ignorespaces Estilo de Trabajo de \textit {CloudSim}, Fuente: Chatterjee et al.}}{24}{figure.2.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces Esquema de trabajo de algoritmos de calendarizaci\'on, Fuente: Elaboraci\'on propia.}}{26}{figure.2.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Arquitectura FCFS para un entorno en la nube. Fuente: Elaboraci\'on propia.}}{27}{figure.2.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces Arquitectura de \textit {Min-Min} para un entorno en la nube. Fuente: Elaboraci\'on propia.}}{28}{figure.2.6}
@@ -24,3 +24,5 @@
 \contentsline {figure}{\numberline {20}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia.}}{46}{figure.3.20}
 \contentsline {figure}{\numberline {21}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia.}}{47}{figure.3.21}
 \contentsline {figure}{\numberline {22}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia.}}{48}{figure.3.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Round Robin}, Fuente: Elaboraci\'on propia.}}{48}{figure.3.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Tiempo ejecuci\'on 50 muestras de todos los algoritmos, Fuente: Elaboraci\'on propia.}}{49}{figure.3.24}
