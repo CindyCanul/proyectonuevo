@@ -26,8 +26,10 @@
 \contentsline {figure}{\numberline {23}{\ignorespaces \textit {Algoritmos de ordenamientos}. Fuente: Elaboraci\IeC {\'o}n propia.}}{41}{figure.2.23}
 \contentsline {figure}{\numberline {24}{\ignorespaces \textit {Round Robin Broker}. Fuente: Elaboraci\IeC {\'o}n propia.}}{42}{figure.2.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {18}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{48}{figure.3.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{49}{figure.3.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia.}}{50}{figure.3.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia.}}{51}{figure.3.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia.}}{52}{figure.3.22}
+\contentsline {figure}{\numberline {25}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{48}{figure.3.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{49}{figure.3.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia.}}{50}{figure.3.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia.}}{51}{figure.3.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia.}}{52}{figure.3.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Round Robin}, Fuente: Elaboraci\'on propia.}}{52}{figure.3.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Tiempo ejecuci\'on 50 muestras de todos los algoritmos, Fuente: Elaboraci\'on propia.}}{53}{figure.3.31}
