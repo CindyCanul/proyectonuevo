@@ -7,32 +7,10 @@
 \chapter{Desarrollo}
 \section*{Introducci\'on}
 
-En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
-=======
+En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera. Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
 
 
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en el esquema de simulación presentado. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
->>>>>>> origin/master
-=======
 
-
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en el esquema de simulación presentado. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
->>>>>>> origin/master
-=======
-
-
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en el esquema de simulación presentado. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
->>>>>>> origin/master
-=======
-
-
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en el esquema de simulación presentado. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
->>>>>>> origin/master
 
 
 
@@ -214,7 +192,7 @@ Para obtener una muestra representativa del tamaño de tareas y tiempo de ejecuc
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{media/odoo/1}
-	\caption{Inicio de Sesión Odoo. Fuente: Elaboración propia.}
+	\caption{Inicio de sesión \textit{Odoo}. Fuente: Elaboración propia.}
 	\label{fig:loginOdoo}
 \end{figure}
 
@@ -225,7 +203,7 @@ Para obtener una muestra representativa del tamaño de tareas y tiempo de ejecuc
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.3]{media/odoo/2}
-	\caption{Panel de Módulos Disponibles. Fuente: Elaboración propia.}
+	\caption{Panel de módulos disponibles. Fuente: Elaboración propia.}
 	\label{fig:OdooApps}
 \end{figure}
 
@@ -236,7 +214,7 @@ Para realizar la medición en tiempo de ejecución, y tamaño de las tareas, se 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.2]{media/odoo/3}
-	\caption{Módulo de Contabilidad. Fuente: Elaboración propia.}
+	\caption{Módulo de contabilidad. Fuente: Elaboración propia.}
 	\label{fig:ContOdoo}
 \end{figure}
 
@@ -270,7 +248,7 @@ Una vez realizadas las operaciones se procede a revisar el tiempo de respuesta d
 	\label{fig:RequestOdooBySize}
 \end{figure}
 
-Otra de las características de las herramientas de desarrolladores es que se pueden analizar cada una de las peticiones realizadas hacia el servidor, y obtener la información necesaria para asignar el tamaño de las tareas (Figura \ref{fig:HeaderRequest}), en donde el apartado de \textbf{Content-Length} muestra el tamaño de la petición para la impresión de una factura en el sistema.
+Otra de las características de las herramientas de desarrolladores es que se pueden analizar cada una de las peticiones realizadas hacia el servidor, y obtener la información necesaria para asignar el tamaño de las tareas (Figura \ref{fig:HeaderRequest}), en donde el apartado de \textit{\textbf{Content-Length}} muestra el tamaño de la petición para la impresión de una factura en el sistema.
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
