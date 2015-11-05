@@ -8,6 +8,7 @@
 \section*{Introducci\'on}
 
 En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera.
+Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
 
 
 
@@ -73,7 +74,6 @@ De los algoritmos mencionados anteriormente, se presentan los siguientes:
 En un entorno de trabajo normal, la forma descrita anteriormente para los algoritmos de \textit{FCFS, Min-Min, Max-Min y Round Robin} lo podemos apreciar de la siguiente manera, Figura (\ref{fig:cuatro}):
 
 
-\setcounter{figure}{3}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[H]
 	\centering
@@ -86,7 +86,6 @@ En un entorno de trabajo normal, la forma descrita anteriormente para los algori
 Sin embargo en un entorno en la nube, al ser m\'ultiples m\'aquinas virtuales alojadas en distintos \textit{hosts}, que a su vez pueden formar parte de uno o m\'as \textit{datacenters}, dicho esquema tiene que ser modificado para poder adoptar un estilo de trabajo similar al proporcionado por el \textit{framework}, por lo que los resultados quedan de la distinta manera:
 
 
-\setcounter{figure}{4}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -101,11 +100,10 @@ De manera similar tenemos los siguientes algoritmos \textit{Min-Min} (Figura \re
 
 \newpage
 
-\setcounter{figure}{5}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/imagencinco}
+	\includegraphics[scale=0.4]{media/imagencinco}
 	\caption{Arquitectura de \textit{Min-Min} para un entorno en la nube. Fuente: Elaboraci\'on propia.}
 	\label{fig:min}
 \end{figure}
@@ -113,11 +111,10 @@ De manera similar tenemos los siguientes algoritmos \textit{Min-Min} (Figura \re
 Para el algoritmo de \textit{Min-Min} (Figura \ref{fig:min}), obtenemos la lista de tareas a partir de la informaci\'on de ellas, procedemos a ordenarlas de menor a mayor tama\~no, asignando la de menor tama\~no en la primera m\'aquina virtual, la siguiente tarea, de acuerdo al tama\~no, pasa a la segunda m\'aquina y as\'i sucesivamente.
 
 \newpage
-\setcounter{figure}{6}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/imagencuatro}
+	\includegraphics[scale=0.4]{media/imagencuatro}
 	\caption{Arquitectura de \textit{Max-Min} para un entorno en la nube. Fuente: Elaboraci\'on propia.}
 	\label{fig:max}
 \end{figure}
@@ -142,7 +139,6 @@ A continuaci\'on se muestran algunas capturas del c\'odigo para la implementaci\
 \subsection*{Configuración de Elementos del \textit{Datacenter} y \textit{DatacenterBrokers} para Algoritmos de Calendarización}
 \addcontentsline{toc}{subsection}{Configuración de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarización}
 
-\setcounter{figure}{8}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -156,7 +152,6 @@ Como primer paso,  debemos de configurar las caracter\'isticas que tendrá nuest
 
 \newpage
 
-\setcounter{figure}{9}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -170,7 +165,6 @@ De igual manera tenemos que asignar las caracter\'isticas que tendr\'a cada \tex
 
 \newpage
 
-\setcounter{figure}{10}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -183,7 +177,6 @@ De igual manera tenemos que asignar las caracter\'isticas que tendr\'a cada \tex
 Continuando con las configuraciones, en la Figura (\ref{fig:VCar}) se muestran las caracter\'isticas utilizadas en las m\'aquinas virtuales, las cuales son: tamaño de la imagen, memoria RAM virtual, n\'umero de instrucciones por segundo, ancho de banda y el n\'umero de procesadores.
 
 
-\setcounter{figure}{11}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -198,13 +191,88 @@ Continuando con las configuraciones, en la Figura (\ref{fig:VCar}) se muestran l
 
 Adem\'as de los recursos, se debe de hacer la configuraci\'on de las tareas a simular (Figura \ref{fig:TCar}), teniendo como par\'ametros el tamaño de la tarea, tamaño de entrada y de salida, as\'i como el número de procesadores que ocupar\'a la tarea, esto \'ultimo refleja la complejidad de la tarea.
 
+\subsection*{\textit{Odoo} - Sistema ERP para caso de Prueba}
+
+Para obtener una muestra representativa para el tamaño de tareas y tiempo de ejecución de las mismas, en este trabajo se hace uso de \textit{Odoo}, que es un sistema completo de gestión empresarial, de código abierto y sin costes de licencias que cubre las necesidades de las áreas de: Contabilidad y Finanzas, Ventas, RRHH, Compras, Proyectos, entre otras. (\citeauthor{odooWiki}, \citeyear{odooWiki}).
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.3]{media/odoo/1}
+	\caption{Inicio de Sesión Odoo. Fuente: Elaboración propia.}
+	\label{fig:loginOdoo}
+\end{figure}
+
+
+\textit{Odoo} nos ofrece una plataforma Web (Figura \ref{fig:loginOdoo}), en donde podemos administrar nuestras aplicaciones, además de permitir instalar aún más módulos que se pueden encontrar de manera gratuita o con algunas licencias por parte de sus desarrolladores (Figura \ref{fig:OdooApps}).
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.3]{media/odoo/2}
+	\caption{Panel de Módulos Disponibles. Fuente: Elaboración propia.}
+	\label{fig:OdooApps}
+\end{figure}
+
+\newpage
+Para realizar la medición en tiempo de ejecución, y tamaño de las tareas, se hizo uso de un módulo de contabilidad el cual permite generar e imprimir facturas hacia diversos clientes. Además de agregar módulos de RRHH para el levantamiento de usuarios de una empresa (Figura \ref{fig:ContOdoo}).
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.2]{media/odoo/3}
+	\caption{Módulo de Contabilidad. Fuente: Elaboración propia.}
+	\label{fig:ContOdoo}
+\end{figure}
+
+La figura (\ref{fig:factOdoo}) muestra una factura generada, que fue utilizada para medir el tamaño de las tareas para las peticiones de documentos en el sistema \textit{ERP}, el tiempo de respuesta del servidor va dependiendo del tipo de petición que es generada, que puede ser desde agregar usuarios al sistema hasta generar los reportes para cada cliente o compañia que esté afiliada.
+
+\newpage
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.2]{media/odoo/4}
+	\caption{Factura generada en el módulo de contabilidad. Fuente: Elaboración propia.}
+	\label{fig:factOdoo}
+\end{figure}
+
+Una vez realizadas las operaciones se procedió a revisar el tiempo de respuesta del servidor así como el tamaño de las tareas para poder adecuar los parámetros en nuestro entorno de simulación, esto a través de las herramientas para desarrolladores del navegador que nos permitieron listar las tareas y filtrarlas por tiempo de respuesta (Figura \ref{fig:RequestOdooByTime}) y por tamaño de la petición (Figura \ref{fig:RequestOdooBySize}).
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.4]{media/odoo/5}
+	\caption{Peticiones realizadas en el servidor en orden decreciente por tiempo de respuesta. Fuente: Elaboración propia.}
+	\label{fig:RequestOdooByTime}
+\end{figure}
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{media/odoo/6}
+	\caption{Peticiones realizadas en el servidor en orden decreciente por tamaño de la tarea. Fuente: Elaboración propia.}
+	\label{fig:RequestOdooBySize}
+\end{figure}
+
+De igual manera con la herramienta para desarrolladores, podemos analizar cada una de las peticiones realizadas hacia el servidor, y obtener la información necesaria para asignar el tamaño de las tareas (Figura \ref{fig:HeaderRequest}), en donde el apartado de \textbf{Content-Length} muestra el tamaño de la petición para la impresión de una factura en el sistema.
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{media/odoo/7}
+	\caption{Cabeceras para impresión de Facturas. Fuente: Elaboración propia.}
+	\label{fig:HeaderRequest}
+\end{figure}
+
+
+
 \subsection*{\textit{DatacenterBrokers} para Algoritmos de Calendarización}
 \addcontentsline{toc}{subsection}{DatacenterBrokers para Algoritmos de Calendarización}
 
 Partiendo del Esquema que se muestra en la figura (\ref{fig:TrabajoCloudsim}), el trabajo presentado se lleva a cabo en la parte de Tareas (\textit{cloudlets}) y M\'aquinas Virtuales (\textit{Virtual Machines}) ya que se pretende mejorar un algoritmo de calendarizaci\'on de tareas.
 Para ello seg\'un muestra el diagrama, el encargado de asignar cada tarea en una m\'aquina virtual es el \textit{datacenter broker}, el cual toma la lista de tareas as\'i como la lista de m\'aquinas virtuales, y de acuerdo a alg\'un algoritmo realiza la asignaci\'on de cada una de las tareas en las distintas m\'aquinas virtuales disponibles.
 
-\setcounter{figure}{12}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -215,7 +283,6 @@ Para ello seg\'un muestra el diagrama, el encargado de asignar cada tarea en una
 
 La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre la lista de tareas y la asigna en la m\'aquina virtual correspondiente, calculando la tarea actual $i$ en la m\'aquina virtual \textbf{$i\%reqVms$} donde \textbf{$reqVms$} es el n\'umero de m\'aquinas virtuales.
 
-\setcounter{figure}{13}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -229,7 +296,6 @@ La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre 
 En la Figura (\ref{fig:minminBroker}) tenemos la implementaci\'on del algoritmo \textit{Min-Min} en el cual podemos apreciar el ordenamiento de la lista antes de pasar a  la asignaci\'on de las m\'aquinas virtuales.
 
 \newpage
-\setcounter{figure}{14}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -243,7 +309,6 @@ En la Figura (\ref{fig:maxminBroker}) observamos la implementaci\'on del algorit
 \newpage
 
 
-\setcounter{figure}{15}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
@@ -255,7 +320,6 @@ En la Figura (\ref{fig:maxminBroker}) observamos la implementaci\'on del algorit
 En la Figura (\ref{fig:sortRevert}) tenemos la implementaci\'on de los m\'etodos de ordenamiento utilizados, el \textbf{sort} utilizado para ordenar las tareas de menor a mayor de acuerdo al tamaño y el \textbf{revert} de forma inversa.
 
 \newpage
-\setcounter{figure}{16}
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
