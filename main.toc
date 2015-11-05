@@ -25,7 +25,7 @@
 \contentsline {section}{Introducci\'on}{24}{section*.21}
 \contentsline {section}{\numberline {2.1}Aplicaci\'on del marco metodol\'ogico y de actividades de experimentaci\'on}{24}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Simulaci\'on del Centro de Datos en la Nube}{24}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Implementaci\'on de los Algoritmos}{26}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Implementaci\'on y evaluaci\IeC {\'o}n de los Algoritmos}{26}{subsection.2.1.2}
 \contentsline {subsection}{Configuraci\IeC {\'o}n de Elementos del Datacenter y DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{31}{section*.22}
 \contentsline {subsection}{DatacenterBrokers para Algoritmos de Calendarizaci\IeC {\'o}n}{38}{section*.24}
 \contentsline {subsection}{\numberline {2.1.3}Mejorar el costo de procesamiento y el tiempo de ejecuci\IeC {\'o}n}{42}{subsection.2.1.3}
