@@ -8,7 +8,9 @@
 \section*{Introducci\'on}
 
 En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera.
-Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
+
+
+Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza el sistema y poder acoplar las carácterísticas en el esquema de simulación presentado. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
 
 
 
@@ -142,7 +144,7 @@ A continuaci\'on se muestran algunas capturas del c\'odigo para la implementaci\
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/caracteristicas_datacenter}
+	\includegraphics[scale=0.4]{media/caracteristicas_datacenter}
 	\caption{Características del \textit{datacenter}. Fuente: Elaboración propia.}
 	\label{fig:DCar}
 \end{figure}
@@ -180,7 +182,7 @@ Continuando con las configuraciones, en la Figura (\ref{fig:VCar}) se muestran l
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/creacion_cloudlet}
+	\includegraphics[scale=0.5]{media/CloudletCreateTask}
 	\caption{Características de las Tareas \textit{(cloudlets)}. Fuente: Elaboración propia.}
 	\label{fig:TCar}
 \end{figure} 
@@ -193,7 +195,7 @@ Adem\'as de los recursos, se debe de hacer la configuraci\'on de las tareas a si
 
 \subsection*{\textit{Odoo} - Sistema ERP para caso de Prueba}
 
-Para obtener una muestra representativa para el tamaño de tareas y tiempo de ejecución de las mismas, en este trabajo se hace uso de \textit{Odoo}, que es un sistema completo de gestión empresarial, de código abierto y sin costes de licencias que cubre las necesidades de las áreas de: Contabilidad y Finanzas, Ventas, RRHH, Compras, Proyectos, entre otras. (\citeauthor{odooWiki}, \citeyear{odooWiki}).
+Para obtener una muestra representativa del tamaño de tareas y tiempo de ejecución de las mismas, en este trabajo se hace uso de \textit{Odoo}, que es un sistema completo de gestión empresarial, de código abierto y sin costes de licencias que cubre las necesidades de las áreas de: Contabilidad y Finanzas, Ventas, RRHH, Compras, Proyectos, entre otras. (\citeauthor{odooWiki}, \citeyear{odooWiki}).
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -204,7 +206,7 @@ Para obtener una muestra representativa para el tamaño de tareas y tiempo de ej
 \end{figure}
 
 
-\textit{Odoo} nos ofrece una plataforma Web (Figura \ref{fig:loginOdoo}), en donde podemos administrar nuestras aplicaciones, además de permitir instalar aún más módulos que se pueden encontrar de manera gratuita o con algunas licencias por parte de sus desarrolladores (Figura \ref{fig:OdooApps}).
+\textit{Odoo} ofrece una plataforma Web (Figura \ref{fig:loginOdoo}), en donde se pueden administrar aplicaciones sobre gestión de recursos empresariales, además de permitir instalar aún más módulos, los cuales se pueden encontrar de manera gratuita o con algunas licencias por parte de sus desarrolladores (Figura \ref{fig:OdooApps}).
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -225,7 +227,7 @@ Para realizar la medición en tiempo de ejecución, y tamaño de las tareas, se 
 	\label{fig:ContOdoo}
 \end{figure}
 
-La figura (\ref{fig:factOdoo}) muestra una factura generada, que fue utilizada para medir el tamaño de las tareas para las peticiones de documentos en el sistema \textit{ERP}, el tiempo de respuesta del servidor va dependiendo del tipo de petición que es generada, que puede ser desde agregar usuarios al sistema hasta generar los reportes para cada cliente o compañia que esté afiliada.
+La figura (\ref{fig:factOdoo}) muestra una factura generada, que fue utilizada para medir el tamaño de las tareas para las peticiones de documentos en el sistema \textit{ERP}, el tiempo de respuesta del servidor va dependiendo del tipo de petición que es generada, que puede ser desde agregar usuarios al sistema hasta generar los reportes para cada cliente o compañía que esté afiliada.
 
 \newpage
 
@@ -237,7 +239,7 @@ La figura (\ref{fig:factOdoo}) muestra una factura generada, que fue utilizada p
 	\label{fig:factOdoo}
 \end{figure}
 
-Una vez realizadas las operaciones se procedió a revisar el tiempo de respuesta del servidor así como el tamaño de las tareas para poder adecuar los parámetros en nuestro entorno de simulación, esto a través de las herramientas para desarrolladores del navegador que nos permitieron listar las tareas y filtrarlas por tiempo de respuesta (Figura \ref{fig:RequestOdooByTime}) y por tamaño de la petición (Figura \ref{fig:RequestOdooBySize}).
+Una vez realizadas las operaciones se procede a revisar el tiempo de respuesta del servidor así como el tamaño de las tareas para poder adecuar los parámetros en el entorno de simulación, esto a través de las herramientas para desarrolladores del navegador, entre las cuales se permiten listar las tareas y filtrarlas por tiempo de respuesta (Figura \ref{fig:RequestOdooByTime}) y por tamaño de la petición (Figura \ref{fig:RequestOdooBySize}).
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -255,7 +257,7 @@ Una vez realizadas las operaciones se procedió a revisar el tiempo de respuesta
 	\label{fig:RequestOdooBySize}
 \end{figure}
 
-De igual manera con la herramienta para desarrolladores, podemos analizar cada una de las peticiones realizadas hacia el servidor, y obtener la información necesaria para asignar el tamaño de las tareas (Figura \ref{fig:HeaderRequest}), en donde el apartado de \textbf{Content-Length} muestra el tamaño de la petición para la impresión de una factura en el sistema.
+Otra de las características de las herramientas de desarrolladores es que se pueden analizar cada una de las peticiones realizadas hacia el servidor, y obtener la información necesaria para asignar el tamaño de las tareas (Figura \ref{fig:HeaderRequest}), en donde el apartado de \textbf{Content-Length} muestra el tamaño de la petición para la impresión de una factura en el sistema.
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -265,6 +267,7 @@ De igual manera con la herramienta para desarrolladores, podemos analizar cada u
 	\label{fig:HeaderRequest}
 \end{figure}
 
+En base a los resultados obtenidos dentro del sistema \textit{Odoo} el tamaño de las tareas para la simulación quedan establecidas en un intervalo de \textbf{10 kb} a \textbf{1 mb} como se muestra en la figura (\ref{fig:TCar}).
 
 
 \subsection*{\textit{DatacenterBrokers} para Algoritmos de Calendarización}
@@ -276,7 +279,7 @@ Para ello seg\'un muestra el diagrama, el encargado de asignar cada tarea en una
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/FCFS_broker}
+	\includegraphics[scale=0.4]{media/FCFS_broker}
 	\caption{\textit{FCFS Broker}. Fuente: Elaboración propia.}
 	\label{fig:fcfsBroker}
 \end{figure}
@@ -286,7 +289,7 @@ La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/minmin_broker}
+	\includegraphics[scale=0.4]{media/minmin_broker}
 	\caption{\textit{Min-Min Broker}. Fuente: Elaboración propia.}
 	\label{fig:minminBroker}
 \end{figure}
@@ -299,7 +302,7 @@ En la Figura (\ref{fig:minminBroker}) tenemos la implementaci\'on del algoritmo 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{media/maxmin_broker}
+	\includegraphics[scale=0.4]{media/maxmin_broker}
 	\caption{\textit{Max-min Broker}. Fuente: Elaboración propia.}
 	\label{fig:maxminBroker}
 \end{figure}
