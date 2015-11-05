@@ -84,6 +84,11 @@ Mariscal, J. and Gil-Garcia, J. (2013).
   para los sectores p{\'u}blico y privado. cide.
 \newblock Recuperado 2015-08-21.
 
+\bibitem[Naylor and Finger, 1967]{naylor1967}
+Naylor, T.~H. and Finger, J.~M. (1967).
+\newblock Verification of computer simulation models.
+\newblock {\em Management Science}, 14(2):B--92.
+
 \bibitem[Nishant and R., 2015]{nishant}
 Nishant, S. and R., K. (2015).
 \newblock Pre-emptable shortest job next scheduling in private cloud
@@ -133,6 +138,12 @@ Salot, P. (2013).
 \newblock {\em IJRET: International Journal of Research in Engineering and
   Technology, ISSN}.
 \newblock Recuperado 2015-08-21.
+
+\bibitem[Shannon and Johannes, 1976]{shannon1976}
+Shannon, R. and Johannes, J.~D. (1976).
+\newblock Systems simulation: the art and science.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
+  10(6):723--724.
 
 \bibitem[Shimpy and Sidhu, 2014]{shimpy2014different}
 Shimpy, E. and Sidhu, M.~J. (2014).

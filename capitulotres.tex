@@ -51,7 +51,7 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 		RAM           & 2048 MB        \\
 		CPU           & 2              \\
 		Storage       & 800GB-1TB      \\ \midrule
-		BW            & 1 GB/s        
+		BW            & 10 GB/s        
 	\end{tabular}
 	\caption{Configuraci\'on de \textit{Host}, Fuente: Elaboraci\'on propia.}
 	\label{tab:host}
@@ -83,10 +83,10 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf Cloudlet}} \\ \midrule
-		length           & 1kb-10kb        \\
-		MIPSlength       & 300b-1.8kb      \\
-		length           & 300b-1.8kb      \\ \midrule
-		length           & 1000 kb/s      
+		length           & 1kb-1024kb        \\
+		MIPSlength       & 1-3      \\
+		fileSize           & 1kb-1024kb      \\ \midrule
+	  
 	\end{tabular}
 	\caption{Configuraci\'on \textit{Cloudlet}, Fuente: Elaboraci\'on propia.}
 	\label{tab:cloudlet}
@@ -95,7 +95,7 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 
 En el Cuadro (\ref{tab:machine}) se muestran los par\'ametros que se consider\'o para las m\'aquinas virtuales, donde cada \textit{VM} tendr\'a 10 GB de almacenamiento, 512 MB  o 1 GB seleccionado de manera aleatoria, adem\'as para la caracter\'istica del procesador se tiene  la propiedad \textit{MIPS} \textit{(million instructions per second)} con 250 \'o 500 y un ancho de banda de 1000 kb/s.
 
-Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 1 kb a 10 kb,  el par\'ametro \textit{fileSize}, que representa el tamaño del archivo de entrada, va de 300 b a 1.8 kb as\'i como el archivo de salida, como par\'ametro final se tiene los \textit{MIPS} que ir\'an de 1 a 3 (Cuadro \ref{tab:cloudlet}).
+Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 1 kb a 1024 kb de acuerdo al tamaño mínimo y máximo en el ERP \textit{Odoo},  el par\'ametro \textit{fileSize}, que representa el tamaño del archivo de entrada, va de 1 kb a 1024 kb as\'i como el archivo de salida, como par\'ametro final se tiene los \textit{MIPS} que ir\'an de 1 a 3 (Cuadro \ref{tab:cloudlet}).
 
 
 
@@ -105,7 +105,7 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
-	\includegraphics[scale=0.5]{media/tiempoejecucion}
+	\includegraphics[scale=0.6]{media/tiempoejecucion}
 	\caption{Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}
 	\label{fig:tiempo}
 \end{figure}
