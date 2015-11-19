@@ -26,10 +26,12 @@
 \contentsline {figure}{\numberline {23}{\ignorespaces \textit {Algoritmos de ordenamientos}. Fuente: Elaboraci\IeC {\'o}n propia.}}{42}{figure.2.23}
 \contentsline {figure}{\numberline {24}{\ignorespaces \textit {Round Robin Broker}. Fuente: Elaboraci\IeC {\'o}n propia.}}{43}{figure.2.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {25}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{49}{figure.3.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{50}{figure.3.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia.}}{51}{figure.3.27}
-\contentsline {figure}{\numberline {28}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia.}}{52}{figure.3.28}
-\contentsline {figure}{\numberline {29}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia.}}{53}{figure.3.29}
-\contentsline {figure}{\numberline {30}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Round Robin}, Fuente: Elaboraci\'on propia.}}{53}{figure.3.30}
-\contentsline {figure}{\numberline {31}{\ignorespaces Tiempo ejecuci\'on 50 muestras de todos los algoritmos, Fuente: Elaboraci\'on propia.}}{54}{figure.3.31}
+\contentsline {figure}{\numberline {25}{\ignorespaces Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}}{50}{figure.3.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Promedio costo de procesamiento con tareas 100-500, Fuente: Elaboraci\'on propia.}}{51}{figure.3.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {FCFS}, Fuente: Elaboraci\'on propia.}}{52}{figure.3.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Max-Min}, Fuente: Elaboraci\'on propia.}}{53}{figure.3.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Min-Min}, Fuente: Elaboraci\'on propia.}}{54}{figure.3.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Tiempo ejecuci\'on 50 muestras \textit {Round Robin}, Fuente: Elaboraci\'on propia.}}{55}{figure.3.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Tiempo ejecuci\'on 50 muestras de todos los algoritmos, Fuente: Elaboraci\'on propia.}}{55}{figure.3.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Tiempo ejecuci\'on con el algoritmo propuesto(izqda.) y el tiempo de ejecuci\IeC {\'o}n sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}}{57}{figure.3.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Costo de procesamiento con el algoritmo propuesto(izqda.) y costo de procesamiento sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}}{57}{figure.3.33}

@@ -8,7 +8,7 @@
 \addcontentsline{toc}{section}{Introducci\'on}
 
 En éste capítulo se describe los resultados obtenidos en modelado y simulación del centro de datos en \textit{CloudSim}. 
-Se ilustran por medio de gráficas lineales el tiempo de ejecución de los algoritmos de calendarización. Se representa en gráficas de barras el promedio del costo de procesamiento y tiempo de ejecución y una interpretación de la desviación estándar obtenida. La experimentación fue desarrollada en una computadora con un procesador \textit{Intel Core i5}, teniendo la siguiente configuración: \textit{2.5 GHz, 3 MB de cach\'e, 4 GB de RAM, Linux Ubuntu 14.04 LTS, 64 bits como sistema operativo y JDK 8.6}.
+Se ilustran por medio de gráficas lineales el tiempo de ejecución de los algoritmos de calendarización. Se representa en gráficas de barras el promedio del costo de procesamiento y tiempo de ejecución y una interpretación de la desviación estándar obtenida. La experimentación fue desarrollada en una computadora con un procesador \textit{Intel Core i5}, teniendo la siguiente configuración: \textit{2.5 GHz, 3 MB de cach\'e, 4 GB de RAM y JDK 8.6}.
 
 
 
@@ -23,7 +23,7 @@ Se ilustran por medio de gráficas lineales el tiempo de ejecución de los algor
 Para evaluar los algoritmos de calendarizaci\'on seleccionados se ha implementado un entorno de c\'omputo en la nube que consiste en un \textit{datacenter}, un \textit{broker}, m\'aquinas virtuales y \textit{host}.  Con el objetivo de evaluar el tiempo de ejecuci\'on y el costo de procesamiento en el \textit{datacenter} tras ejecutar cierto n\'umero de tareas \textit{(cloudlets)}.
 
 Para la configuraci\'on del centro de datos en \textit{CloudSim}, se utilizaron cincuenta \textit{host}, quince m\'aquinas virtuales por \textit{host} y las tareas fueron establecidas en un intervalo de 100 hasta 500 (Cuadro \ref{table:datacenter}).
-Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20480 Mb de memoria RAM, ocho n\'ucleos de procesamiento que tienen un almacenamiento de 800 GB \'o 1 TB, estas fueron elegidas de manera aleatoria y finalmente el ancho de banda fue de 10 GB/s.
+Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20480 Mb de memoria RAM, ocho n\'ucleos de procesamiento y tienen un almacenamiento de 800 GB \'o 1 TB, estas fueron elegidas de manera aleatoria y finalmente el ancho de banda fue de 10 GB/s.
 
 \setcounter{table}{0}
 \renewcommand\thetable{\arabic{table}}
@@ -50,8 +50,9 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 		\multicolumn{2}{c}{{\bf Host}} \\ \midrule
 		RAM           & 20480 MB        \\
 		CPU           & 8              \\
-		Storage       & 800GB - 1TB      \\ \midrule
+		Storage       & 800GB - 1TB      \\ 
 		BW            & 10 GB/s        
+		\\ \bottomrule
 	\end{tabular}
 	\caption{Configuraci\'on de \textit{Host}, Fuente: Elaboraci\'on propia.}
 	\label{tab:host}
@@ -68,8 +69,9 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 		\multicolumn{2}{c}{{\bf VirtualMachine}} \\ \midrule
 		RAM               & 512 MB | 2GB          \\
 		vCPU              & 2           \\
-		Storage           & 10 GB                \\ \midrule
-		BW                & 1 GB/s              
+		Storage           & 10 GB                \\ 
+		BW                & 1 GB/s    
+		\\ \bottomrule          
 	\end{tabular}
 	\caption{\textit{Virtual Machine}, Fuente: Elaboraci\'on propia.}
 	\label{tab:machine}
@@ -93,7 +95,7 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 \end{table}
 
 
-En el Cuadro (\ref{tab:machine}) se muestran los par\'ametros que se consider\'o para las m\'aquinas virtuales, donde cada \textit{VM} tendr\'a 10 GB de almacenamiento, 512 MB  o 2 GB seleccionado de manera aleatoria, adem\'as para la caracter\'istica del procesador se tiene  la propiedad \textit{MIPS} \textit{(million instructions per second)} con 250 \'o 500 y un ancho de banda de 1000 kb/s.
+En el Cuadro (\ref{tab:machine}) se muestran los par\'ametros que se consider\'o para las m\'aquinas virtuales, donde cada \textit{VM} tendr\'a 10 GB de almacenamiento, 512 MB  o 2 GB seleccionado de manera aleatoria, adem\'as para la caracter\'istica del procesador se tiene  la propiedad \textit{MIPS} \textit{(million instructions per second)} con 250 \'o 500 y un ancho de banda de 1 GB/s.
 
 Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 100 MI a 1000 MI de acuerdo al tamaño mínimo y máximo en el ERP \textit{Odoo},  el par\'ametro \textit{fileSize}, que representa el tamaño del archivo de entrada, va de 1 kb a 2 mb as\'i como el archivo de salida, como par\'ametro final se tiene los \textit{outputSize} que ir\'an de 1 kb a 2 mb (Cuadro \ref{tab:cloudlet}).
 
@@ -105,7 +107,6 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf Amazon EC2 t2.medium}} \\ \midrule
-		length           & 1 kb - 1024 kb       \\
 		vCPU     & 2     \\
 		RAM &2 GB \\
 		Costo por hora           & \$0.052 USD      \\ \midrule
@@ -121,6 +122,15 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 %%-----------------------------------------
 %%-----------------------------------------
 %%escribir lo de la tabla aqui AMAZON y verificar texto de las tablas de arriba.
+Los \textit{Cloudlets} en \textit{CloudSim} tienen un parámetro configurable que permite establecer un costo de procesamiento de manera monetaria. Para ello se consultó con el proveedor de servicios Amazon con el objetivo de  encontrar una instancia equivalente a las máquinas virtuales establecidas en la simulación. 
+
+Se encontró que la \textit{Amazon EC2 t2.medium} cumple con las características de la simulación (Amazon,2015).
+
+El costo de la instancia en Amazon es \$0.052 USD, entonces se configuró la característica  de los \textit{Cloudlets} con una tarifa de \$ 1.$5 e^{-5}$ USD por segundo.
+
+ 
+
+
 %%-----------------------------------------
 %%-----------------------------------------
 %%-----------------------------------------
@@ -129,6 +139,10 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 
 
 \newpage
+\section{Simulación en \textit{CloudSim}}
+
+Al tener la configuración completa del centro de datos en Cloudsim, se procedió a realizar la simulación.
+Para la simulación, el programa fue ejecutado 30 veces y se ordenó ascendentemente la suma total del tiempo de ejecución de cada simulación. Se eliminaron las dos con menor tiempo y las dos con mayor tiempo, con el fin de evitar sesgos ya sea de manera positiva o negativa.
 
 \setcounter{figure}{24}
 \renewcommand\thefigure{\arabic{figure}}
@@ -141,7 +155,7 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 
 
 
-En la figura (\ref{fig:tiempo}), se puede observar el promedio del tiempo de ejecuci\'on en \emph{ms} para diferentes cantidades de tareas (de 100 a 500). A primera vista con el algoritmo \textit{FCFS} y \textit{Min-Min} se mantiene un tiempo de ejecuci\'on sin muchos cambios a pesar del aumento en la carga de tareas, a diferencia del algoritmo \textit{Max-Min} que aument\'o el tiempo de ejecuci\'on a medida que se increment\'o el n\'umero de tareas.
+En la figura (\ref{fig:tiempo}), se puede observar el promedio del tiempo de ejecuci\'on en \emph{ms} para diferentes cantidades de tareas (de 100 a 500). A primera vista con el algoritmo \textit{FCFS} y \textit{Min-Min} se mantiene un tiempo de ejecuci\'on sin muchos cambios a pesar del aumento en la carga de tareas, a diferencia del algoritmo \textit{Max-Min} que aument\'o el tiempo de ejecuci\'on a medida que se increment\'o el n\'umero de tareas. Sin embargo para el algoritmo \textit{Round Robin} tiene el tiempo de ejecución a un poco más del doble de los anteriores. Esto es porque la tarea es procesada por diferentes máquinas virtuales.
 
 \label{etiqueta}
 \newpage
@@ -155,7 +169,7 @@ En la figura (\ref{fig:tiempo}), se puede observar el promedio del tiempo de eje
 \end{figure}
 
 
-El costo de procesamiento, de acuerdo a cada algoritmo, se puede observar en la figura (\ref{fig:costo}), en donde el algoritmo \textit{FCFS} tiene un incremento dr\'astico al realizar la prueba con 500 tareas. El algoritmo \textit{Max-Min} se conserv\'o sin muchos cambios apesar de la cantidad de tareas, mientras que \textit{Min-Min} tiene un menor costo de procesamiento cuando las tareas son inferiores a 300.
+El costo de procesamiento, de acuerdo a cada algoritmo, se puede observar en la figura (\ref{fig:costo}), en donde el algoritmo \textit{FCFS} tiene un incremento dr\'astico al realizar la prueba con 500 tareas. El algoritmo \textit{Max-Min} se conserv\'o sin muchos cambios a pesar de la cantidad de tareas, mientras que \textit{Min-Min} tiene un menor costo de procesamiento cuando las tareas son inferiores a 300. Pero el algoritmo \textit{Round Robin} tiene un menor costo de procesamiento, ya que lo ejecutado en cada máquina virtual es la fracción de un tarea (\textit{Cloudlet}), por ende los \textit{MI} procesados son menores.
 \label{etiqueta2}
 \newpage
 
@@ -168,7 +182,7 @@ El costo de procesamiento, de acuerdo a cada algoritmo, se puede observar en la 
 \end{figure}
 
 
-Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se tomaron 50 muestras de una simulaci\'on de 500 tareas. En la figura (\ref{fig:ejecucion}), se puede apreciar que el algoritmo \textit{FCFS} tiene un comportamiento inestable ya que algunas tareas pueden tener menor complejidad o tamaño, lo que implica una respuesta r\'apida.
+Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se observó una ventana de 50 muestras de una simulaci\'on de 500 tareas. En la figura (\ref{fig:ejecucion}), se puede apreciar que el algoritmo \textit{FCFS} tiene un comportamiento inestable ya que algunas tareas pueden tener menor complejidad o tamaño, lo que implica una respuesta r\'apida.
 
 \newpage
 
@@ -181,7 +195,7 @@ Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se 
 \end{figure}
 
 
- En la figura (\ref{fig:maxmin}) se tiene la misma simulaci\'on pero con el algoritmo \textit{Max-Min}, de acuerdo a las caracter\'isticas de este calendarizador, en las primeras tareas se toma un mayor tiempo en responder y va disminuyendo de manera gradual, sin embargo a\'un es inestable en las \'ultimas muestras ya que no se contempla el grado de complejidad, es decir el par\'ametro \textit{MIPS} de los \textit{cloudlets}.
+ En la figura (\ref{fig:maxmin}) se tiene la misma simulaci\'on pero con el algoritmo \textit{Max-Min}, de acuerdo a las caracter\'isticas de este calendarizador, en las primeras tareas se toma un mayor tiempo en responder y va disminuyendo de manera gradual, sin embargo a\'un es inestable en las \'ultimas muestras ya que no se contempla el grado de complejidad, es decir el par\'ametro \textit{MI} de los \textit{cloudlets}.
 
 
 
@@ -195,7 +209,7 @@ Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se 
 	\label{fig:minmin}
 \end{figure}
 
-En la parte de arriba se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}). Por último, en la figura (\ref{fig:roundrobin}) podemos visualizar la gráfica correspondiente al algoritmo \textit{Round Robin}.
+En la parte de arriba se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}). Por último, en la figura (\ref{fig:roundrobin}) podemos visualizar la gráfica correspondiente al algoritmo \textit{Round Robin}. Para éste último se observan picos en el tiempo de ejecució, esto es porque la tarea es fraccionada, y para pasar al estado de \textit{COMPLETADA} cada fracción debe ser ejecutada por la máquina virtual correspondiente.
 
 
 \renewcommand\thefigure{\arabic{figure}}
@@ -240,3 +254,29 @@ La figura (\ref{fig:figure}) muestra una comparativa de los cuatro algoritmos mo
 \end{table}
 
 Observando la desviaci\'on est\'andar de \'estas muestras anteriores, los algoritmo \textit{Min-Min}, \textit{Round Robin} y \textit{FCFS} tuvieron m\'as variaciones en las muestras con respecto a la media, mientras que el \textit{Max-Min} tuvo las variaciones por debajo de las dos anteriores (Cuadro \ref{tiempotabla}).
+
+
+Por último se realizo la simulación contemplando las características de las tareas, pero sin procesamiento previo antes de calendarizar. 
+
+Además se realizó la simulación del algoritmo propuesto en el capítulo dos. Para ello se realizaron diez simulaciones, descartando la de mejor y peor resultado.
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!] 
+	\centering
+	\includegraphics[scale=0.7]{media/tiempoFinal}
+	\caption{Tiempo ejecuci\'on con el algoritmo propuesto(izqda.) y el tiempo de ejecución sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}
+	\label{fig:timeF}
+\end{figure}
+
+En la figura \ref{fig:timeF} se aprecia el tiempo de ejecución del algoritmo propuesto y de la simulación sin ningún procesamiento previo. Con la heurística el promedio del tiempo de ejecución se reduce de 80 $ms$ a 60 $ms$ sin embargo es el tiempo que le lleva al centro de datos procesar esa cantidad de tareas, pero no se tiene en cuenta el tiempo previo para la búsqueda de partícula óptima. En promedio éste proceso se toma entre 20$ms$ a 30$ms$ por simulación.
+
+\renewcommand\thefigure{\arabic{figure}}
+\begin{figure}[h!] 
+	\centering
+	\includegraphics[scale=0.7]{media/costoFinal}
+	\caption{Costo de procesamiento con el algoritmo propuesto(izqda.) y costo de procesamiento sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}
+	\label{fig:costF}
+\end{figure}
+
+En cuanto al costo de procesamiento las simulaciones que plasmaron el resultado esperado, fue menor de 50 unidades como se muestra en la figura \ref{fig:costF}. Comparado con \textit{Round Robin} que tenia un costo de entre 60 a 80 unidades, existe una mejoría.
+

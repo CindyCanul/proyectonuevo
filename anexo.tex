@@ -2,7 +2,755 @@
 \chead{}
 \rhead{\thepage}
 
+
+
 \chapter*{Anexos}
 \addcontentsline{toc}{chapter}{Anexos}
 
 
+En ésta sección se presentan los anexos utilizados para el desarrollo del  proyecto: código fuente de los algoritmos implementados y de otras herramientas complementarias.
+
+\newpage
+
+\section*{Simulación básica en \textit{CloudSim}}
+\addcontentsline{toc}{section}{Simulación Básica en \textit{CloudSim}}
+
+\begin{lstlisting}
+/*
+* Title:        CloudSim Toolkit
+* Description:  CloudSim (Cloud Simulation) Toolkit for Modeling and Simulation
+*               of Clouds
+* Licence:      GPL - http://www.gnu.org/copyleft/gpl.html
+*
+* Copyright (c) 2009, The University of Melbourne, Australia
+*/
+package FCFS;
+
+import java.util.*;
+
+import common.CloudletUtilities;
+import org.cloudbus.cloudsim.*;
+import org.cloudbus.cloudsim.core.CloudSim;
+import common.VirtualMachineCreator;
+import common.CloudletCreator;
+import common.DataCenterCreator;
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class FCFS {
+
+//Lista de tareas
+private static List<Cloudlet> cloudletList;
+
+// Lista de maquinas virtuales
+private static List<Vm> vmlist;
+
+
+public static List<Cloudlet> main(String[] args) {
+
+Log.printLine("Iniciando FCFS...");
+
+try {
+// Primer paso: Se inicializa CloudSim
+
+int num_user = 1;   // numero de usuarios
+Calendar calendar = Calendar.getInstance();
+boolean trace_flag = false;  // caracteristica de seguimiento de eventos desactivada
+
+// La libreria CloudSim es iniciada
+CloudSim.init(num_user, calendar, trace_flag);
+
+// Segundo paso: Crear el centro de datos
+//Los centros de datos son los proveedores de recursos en CloudSim . Necesitamos a la lista uno de ellos para ejecutar una simulaci\'on CloudSim
+
+Datacenter datacenter0 =  new DataCenterCreator().createDatacenter("Datacenter_0");
+
+
+//Tercer paso: Crear un broker
+//DatacenterBroker broker = createBroker();
+FcfsBroker broker = createBroker();
+int brokerId = broker.getId();
+
+//Cuarto paso: Crear las maquinas virtuales
+//vmlist = new VmsCreator().createVirtualMachines(brokerId);
+vmlist = new VirtualMachineCreator().createVM(brokerId, 15, 0);
+//se crean las tareas
+cloudletList = new CloudletCreator().createTasks(brokerId, 500, 0);
+
+Log.printLine("Initial Cloudlet :"+cloudletList.size());
+
+//se envia la lista de maquinas virtuales al broker
+broker.submitVmList(vmlist);
+
+
+//Quinto paso: Enviar las tareas al broker
+
+broker.submitCloudletList(cloudletList);
+
+
+//llamar a la funcion del broker encargada de calendarizar las tareas a las m\'aquinas virtuales
+broker.scheduleTaskstoVms();
+
+
+//Sexto paso: Iniciar la simulacion
+CloudSim.startSimulation();
+
+
+// Paso final: Obtener el listado de las tareas completadas
+List<Cloudlet> newList = broker.getCloudletReceivedList();
+
+CloudSim.stopSimulation();
+
+CloudletUtilities.printCloudletList(newList);
+
+return newList;
+//Log.printLine("FCFS finished!");
+}
+catch (Exception e) {
+e.printStackTrace();
+Log.printLine("The simulation has been terminated due to an unexpected error");
+}
+return null;
+}
+
+
+
+// funcion que crea un broker del tipo especifico para cada algoritmo
+private static FcfsBroker createBroker(){
+
+FcfsBroker broker = null;
+try {
+broker = new FcfsBroker("Broker");
+} catch (Exception e) {
+e.printStackTrace();
+return null;
+}
+return broker;
+}
+
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section*{\textit{Cloud Brokers}}
+\addcontentsline{toc}{section}{\textit{Cloud Brokers}}
+\subsection*{\textit{FCFS Broker}}
+
+\begin{lstlisting}
+package FCFS;
+
+import PSO.Particle;
+import org.cloudbus.cloudsim.DatacenterBroker;
+import org.cloudbus.cloudsim.Cloudlet;
+import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.Host;
+import PSO.FitnessFunction;
+
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class FcfsBroker extends DatacenterBroker {
+
+public FcfsBroker(String name) throws Exception {
+super(name);
+// TODO Auto-generated constructor stub
+}
+
+//Funcion de calendarizacion
+public void scheduleTaskstoVms(){
+int reqTasks=cloudletList.size();
+int reqVms=vmList.size();
+
+System.out.println("\n\tFCFS Broker Schedules\n");
+for(int i=0;i<reqTasks;i++){
+//Asignacion de las tareas a las maquinas virtuales
+bindCloudletToVm(i, (i%reqVms));
+System.out.println("Task"+cloudletList.get(i).getCloudletId()+" is bound with VM"+vmList.get(i%reqVms).getId() +  "tam: " + cloudletList.get(i).getCloudletFileSize());
+}
+
+System.out.println("\n");
+}
+}
+\end{lstlisting}
+
+
+\subsection*{\textit{Max-Min Broker}}
+\begin{lstlisting}
+
+package Maxmin;
+
+
+import org.cloudbus.cloudsim.DatacenterBroker;
+import org.cloudbus.cloudsim.lists.CloudletList;
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class MaxminBroker extends DatacenterBroker {
+
+public MaxminBroker(String name) throws Exception {
+super(name);
+// TODO Auto-generated constructor stub
+}
+
+//funcion de calendarizacion
+public void scheduleTaskstoVms(){
+int reqTasks=cloudletList.size();
+int reqVms=vmList.size();
+
+System.out.println("\n\tMaxmin Broker Schedules\n");
+
+CloudletList.revert(cloudletList);
+
+for(int i=0;i<reqTasks;i++){
+bindCloudletToVm(i, (i%reqVms));
+System.out.println("Task"+cloudletList.get(i).getCloudletId()+" is bound with VM"+vmList.get(i%reqVms).getId() +  "tam: " + cloudletList.get(i).getCloudletLength());
+}
+
+System.out.println("\n");
+}
+}
+
+\end{lstlisting}
+
+
+
+\subsection*{\textit{Min-Min Broker}}
+\begin{lstlisting}
+package Minmin;
+
+
+import org.cloudbus.cloudsim.DatacenterBroker;
+import org.cloudbus.cloudsim.Log;
+import org.cloudbus.cloudsim.lists.CloudletList;
+
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+
+public class MinminBroker extends DatacenterBroker {
+
+public MinminBroker(String name) throws Exception {
+super(name);
+// TODO Auto-generated constructor stub
+}
+
+//funcion de calendarizacion
+public void scheduleTaskstoVms(){
+int numTareas = cloudletList.size();
+int numVirtualM = vmList.size();
+
+System.out.println("\n\tMinmin Broker Schedules\n");
+
+CloudletList.sort(cloudletList);
+
+//Asignamos las tareas a cada maquina virtual de manera que se atiendan primero las de menor tama-o
+for(int i=0;i<numTareas;i++){
+bindCloudletToVm(i, (i%numVirtualM));
+System.out.println("Task" + cloudletList.get(i).getCloudletId() + " is bound with VM" + vmList.get(i % numVirtualM).getId() + " tam: " + cloudletList.get(i).getCloudletLength());
+}
+
+}
+}
+
+\end{lstlisting}
+
+\subsection*{\textit{Round Robin Broker}}
+\begin{lstlisting}
+package RoundRobin;
+
+import org.cloudbus.cloudsim.DatacenterBroker;
+import org.cloudbus.cloudsim.Log;
+import org.cloudbus.cloudsim.lists.CloudletList;
+
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class RoundRobinBroker extends DatacenterBroker{
+
+public RoundRobinBroker(String name) throws Exception {
+super(name);
+}
+
+public int get_quantum(){
+int numTareas = cloudletList.size();
+int resultado = 0;
+
+for(int i = 0; i < numTareas; i++){
+resultado += cloudletList.get(i).getActualCPUTime();
+}
+
+return resultado /= numTareas;
+}
+
+public void scheduleTasksToVms(){
+int numTareas = cloudletList.size();
+int numVirtualM = vmList.size();
+
+Log.printLine("Round Robin Scheduler");
+int index = 0;
+int i = 0;
+while( index < numTareas ){
+long capacidad = vmList.get(i).getBw();
+long costo_actual = 0;
+long currentCost = (costo_actual + cloudletList.get(index).getCloudletLength()) / 100;
+while (currentCost <= capacidad && index < numTareas) {
+costo_actual += cloudletList.get(index).getCloudletLength();
+bindCloudletToVm(index, i);
+System.out.println("Task" + cloudletList.get(index).getCloudletId() + " is bound with VM" + vmList.get(i).getId() + " tam: " + cloudletList.get(index).getCloudletLength());
+index++;
+if(index >= numTareas) {
+//Si terminamos de asignar todas las tareas
+break;
+}
+
+}
+
+i++;
+
+if(i >= numVirtualM) {
+//Reiniciamos la ronda de asignacion a la maquina 0
+i = 0;
+}
+}
+}
+
+}
+
+\end{lstlisting}
+
+
+\subsection*{\textit{Heuristics Broker}}
+\begin{lstlisting}
+package Heuristics;
+
+import PSO.PSOResult;
+import PSO.PSOUtilities;
+import PSO.Particle;
+import PSO.Swarm;
+
+import org.cloudbus.cloudsim.DatacenterBroker;
+
+import java.util.List;
+
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class HeuristicBroker extends DatacenterBroker {
+
+public HeuristicBroker(String name) throws Exception {
+super(name);
+}
+
+public void scheduleTaskstoVms(List<Particle> particleList) {
+
+// Se crea el objeto Swarm
+Swarm swarm = new Swarm();
+// las tareas (particulas) son enviadas para evaluar
+PSOResult result = swarm.init(particleList, vmList, 10, 2);
+
+int cont = 0;
+//Se realiza la iteracion hasta que todas las tareas esten calendariadas
+while (cont < particleList.size()) {
+// se asigna la mejor particula a la maquina virtual encontrada con PSO
+bindCloudletToVm(result.getParticle().getCloudletId(), result.getVmId());
+particleList.get(result.getParticle().getCloudletId()).scheduled = true;
+System.out.println("Task" + result.getParticle().getCloudletId() + " is bound with VM" + result.getVmId() + "tam: " + result.getParticle().getCloudletFileSize());
+cont++;
+//Se ejecuta PSO con la lista actualizada
+result = swarm.init(particleList, vmList, 10, 2);
+
+}
+
+}
+}
+
+\end{lstlisting}
+
+\newpage
+
+\section*{\textit{Metaheurística PSO}}
+\addcontentsline{toc}{section}{\textit{Metaheurística PSO}}
+
+
+
+
+\subsection*{\textit{Partícula}}
+\begin{lstlisting}
+package PSO;
+
+import org.cloudbus.cloudsim.Cloudlet;
+import org.cloudbus.cloudsim.UtilizationModel;
+
+
+/**
+* Created by Jake The Dog on 28/10/15.
+*/
+public class Particle extends Cloudlet {
+
+/**
+* Allocates a new Cloudlet object. The Cloudlet length, input and output file sizes should be
+* greater than or equal to 1. By default this constructor sets the history of this object.
+*
+* @param cloudletId          the unique ID of this Cloudlet
+* @param cloudletLength      the length or size (in MI) of this cloudlet to be executed in a
+* PowerDatacenter
+* @param pesNumber           the pes number
+* @param cloudletFileSize    the file size (in byte) of this cloudlet <tt>BEFORE</tt> submitting
+* to a PowerDatacenter
+* @param cloudletOutputSize  the file size (in byte) of this cloudlet <tt>AFTER</tt> finish
+* executing by a PowerDatacenter
+* @param utilizationModelCpu the utilization model cpu
+* @param utilizationModelRam the utilization model ram
+* @param utilizationModelBw  the utilization model bw
+* @pre cloudletID >= 0
+* @pre cloudletLength >= 0.0
+* @pre cloudletFileSize >= 1
+* @pre cloudletOutputSize >= 1
+* @post $none
+*/
+
+public boolean scheduled = false;
+
+public Particle(int cloudletId, long cloudletLength, int pesNumber, long cloudletFileSize, long cloudletOutputSize, UtilizationModel utilizationModelCpu, UtilizationModel utilizationModelRam, UtilizationModel utilizationModelBw) {
+super(cloudletId, cloudletLength, pesNumber, cloudletFileSize, cloudletOutputSize, utilizationModelCpu, utilizationModelRam, utilizationModelBw);
+}
+
+public void initialise() {
+
+
+}
+
+
+/* Extends attributes and methods */
+
+/**
+* the velocity of cloudlet particle is denoted by :
+* v[i][k+1] = (inertia weight)v[i][k] + (acceleration coefficient 1)Rand(0,1) * (pbest - x[i][k]) + (acceleration coefficient 2)Rand(0,1) * (gbest - x[i][k])
+* <p>
+* -----------------------------------
+*/
+private int velocity;
+private int position;
+private double pbest;
+private double gbest;
+
+private int pbestPosition;
+private int gbestPosition;
+
+private int bestVm;
+
+/**
+* coefficients
+* W = inertia weight
+* C = acceleration coefficients
+* rand = rand number between 0,1
+*/
+private int w = 1;
+private int c1 = 1;
+private int c2 = 1;
+
+public static int getRandom() {
+return ((int) (Math.random() * (1)));
+}
+
+public static int getRandomInteger(int maximun, int minimum) {
+return ((int) (Math.random() * (maximun - minimum))) + minimum;
+}
+
+public void initParticle(int vms, int velocityLimit) {
+this.position = getRandomInteger(vms, 0);
+this.velocity = getRandomInteger(velocityLimit, 1);
+this.pbest = Double.POSITIVE_INFINITY;
+}
+
+public int getVelocity() {
+return velocity;
+}
+
+public void setVelocity(int gbest) {
+c1 = getRandomInteger(2, 1);
+c2 = getRandomInteger(2, 1);
+
+velocity = (w * position) + ((c1 * getRandom()) * (this.pbestPosition - this.position)) + ((c2 * getRandom()) * (gbest - this.position));
+}
+
+public int getPosition() {
+return this.position;
+}
+
+public void setPosition(int velocity) {
+this.position = this.position + velocity;
+}
+
+
+public void updatePbest(double fit) {
+//si el fit es menor que el pbest se actualiza
+if (fit < this.pbest) {
+this.pbest = fit;
+}
+}
+
+public void setPbest(double fit) {
+this.pbest = fit;
+}
+
+public double getPbest() {
+return this.pbest;
+}
+
+public void setBestVm(int x) {
+this.bestVm = x;
+}
+
+public int getBestVm() {
+return this.bestVm;
+}
+
+
+}
+
+\end{lstlisting}
+
+\subsection*{\textit{FitnessFunction}}
+\begin{lstlisting}
+package PSO;
+
+import PSO.Particle;
+import org.cloudbus.cloudsim.Host;
+import org.cloudbus.cloudsim.Vm;
+import org.cloudbus.cloudsim.Cloudlet;
+import common.CloudletUtilities;
+
+import java.util.List;
+/**
+* FCFS Task scheduling
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+
+public class FitnessFunction {
+
+public double evaluate(Cloudlet particle, Vm vm) {
+CloudletUtilities utilities = new CloudletUtilities();
+
+return utilities.getProcessingCostBefore(vm, particle);
+}
+
+}
+
+\end{lstlisting}
+
+
+
+\subsection*{\textit{Swarm Class}}
+\begin{lstlisting}
+package PSO;
+
+import org.cloudbus.cloudsim.Vm;
+
+import java.util.List;
+
+/**
+* Created by Jake The Dog on 16/11/02.
+*/
+public class Swarm {
+
+public static int getRandomInteger(int maximun, int minimum) {
+return ((int) (Math.random() * (maximun - minimum))) + minimum;
+}
+
+public static void initialize(List<Particle> list, int vms, int velocityLimit) {
+for (int i = 0; i < list.size(); i++) {
+list.get(i).initParticle(vms, velocityLimit);
+}
+}
+
+public static Particle getBestParticle(List<Particle> list) {
+int bIndex = 0;
+double best = Double.POSITIVE_INFINITY;
+for (int i = 0; i < list.size(); i++) {
+if (list.get(i).getPbest() < best) {
+best = list.get(i).getPbest();
+bIndex = i;
+
+}
+}
+return list.get(bIndex);
+}
+
+public static PSOResult init(List<Particle> particles, List<? extends Vm> vms, int iteration, int velocityLimit) {
+double gbest = 0;
+int gBestPosition = 0;
+Particle gBestParticle;
+PSOResult result = new PSOResult();
+// Se inicia de manera aleatoria la posici\'on y la velocidad de cada particula
+initialize(particles, vms.size(), velocityLimit);
+//Criterio de terminaci\'0n de PSO
+for (int x = 0; x < iteration; x++) {
+
+
+//Para cada part\'icula, calcular su fitness value
+FitnessFunction fitness = new FitnessFunction();
+for (int i = 0; i < particles.size(); i++) {
+if (!particles.get(i).scheduled) {
+double fitnessValue = fitness.evaluate(particles.get(i), vms.get(particles.get(i).getPosition() % vms.size()));
+//Si el acutal fitnessValue es mejor que el previo pbest, colocamos el fitnesValue como nuevo pbest
+if (fitnessValue < particles.get(i).getPbest()) {
+particles.get(i).setPbest(fitnessValue);
+particles.get(i).setBestVm(particles.get(i).getPosition() % vms.size());
+}
+}
+}
+// se selecciona la mejor particula como gbest
+gBestParticle = getBestParticle(particles);
+gbest = gBestParticle.getPbest();
+gBestPosition = gBestParticle.getPosition();
+
+//Actualizamos la velocidad y la posicion de cada particula
+result.setParticle(gBestParticle);
+result.setVmId(gBestParticle.getBestVm());
+result.setCost(gbest);
+for (int i = 0; i < particles.size(); i++) {
+
+particles.get(i).setVelocity(gBestPosition);
+int velocity = particles.get(i).getVelocity();
+particles.get(i).setPosition(velocity);
+}
+}
+
+
+return result;
+
+
+}
+}
+
+\end{lstlisting}
+
+
+
+\subsection*{\textit{PSOResult Class}}
+\begin{lstlisting}
+package PSO;
+
+import org.cloudbus.cloudsim.Vm;
+
+/**
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class PSOResult {
+
+private double cost;
+private int vmId;
+private Particle particle;
+
+public PSOResult() {
+this.cost = 0.0;
+this.vmId = 0;
+this.particle = null;
+}
+
+public void setCost(double x) {
+this.cost = x;
+}
+
+public double getCost() {
+return this.cost;
+}
+
+public void setVmId(int x) {
+this.vmId = x;
+}
+
+public int getVmId() {
+return this.vmId;
+}
+
+public void setParticle(Particle particle) {
+this.particle = particle;
+}
+
+public Particle getParticle() {
+return this.particle;
+}
+}
+
+\end{lstlisting}
+
+
+\subsection*{\textit{PSOUtilities Class}}
+\begin{lstlisting}
+package PSO;
+
+import org.cloudbus.cloudsim.Cloudlet;
+
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+* @author
+* Canul, Cindy
+* Kumul, Cristian
+* Peraza, Jonathan
+*/
+public class PSOUtilities {
+
+public List<Particle> parseParticles(List<? extends Cloudlet> listCloudlet) {
+
+List<Particle> particles = new LinkedList<Particle>();
+
+for (int i = 0; i < listCloudlet.size(); i++) {
+Cloudlet cloudlet = listCloudlet.get(i);
+Particle particle = new Particle(cloudlet.getCloudletId(), cloudlet.getCloudletLength(), cloudlet.getNumberOfPes(), cloudlet.getCloudletFileSize(), cloudlet.getCloudletOutputSize(), cloudlet.getUtilizationModelCpu(), cloudlet.getUtilizationModelRam(), cloudlet.getUtilizationModelBw());
+
+particles.add(particle);
+}
+
+return particles;
+}
+
+public List<Cloudlet> particles2Cloudlets(List<Particle> list) {
+
+List<Cloudlet> cloudlets = new LinkedList<Cloudlet>();
+
+for (int i = 0; i < list.size(); i++) {
+Particle particle = list.get(i);
+Cloudlet cloudlet = new Cloudlet(particle.getCloudletId(), particle.getCloudletLength(), particle.getNumberOfPes(), particle.getCloudletFileSize(), particle.getCloudletOutputSize(), particle.getUtilizationModelCpu(), particle.getUtilizationModelRam(), particle.getUtilizationModelBw());
+cloudlet.setUserId(particle.getUserId());
+cloudlets.add(cloudlet);
+}
+return cloudlets;
+}
+}
+
+\end{lstlisting}
