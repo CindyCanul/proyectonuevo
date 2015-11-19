@@ -7,7 +7,7 @@
 \chapter{Desarrollo}
 \section*{Introducci\'on}
 
-En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera. Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto.
+En \'este cap\'itulo se muestra la arquitectura de los distintos esquemas de calendarizaci\'on de trabajos en un entorno en la nube, para la implementaci\'on de dichos esquemas se hace uso de un \textit{framework} llamado \textit{CloudSim}, el cual ser\'a definido de igual manera. Además se mostrarán algunos procesos de un sistema \textit{ERP} para verificar el tamaño de las peticiones que realiza y poder acoplar las carácterísticas en nuestro esquema de simulación. Para llevar a cabo la medición de las peticiones se hace uso de \textit{Odoo} un sistema de ERP integrado de código abierto. Finalmente la implementación del algoritmo basado en una metaheurística \textit{(PSO)}.
 
 
 
@@ -24,7 +24,7 @@ En base en los puntos descritos anteriormente en el marco metodol\'ogico se real
 
 \subsection{Simulaci\'on del Centro de Datos en la Nube}
 
- \textit{\textbf{Cloudsim}} es un nuevo, generalizado y extensible \textit{framework} de simulaci\'on, que permite el modelaje, simulaci\'on y experimentaci\'on de infraestructuras emergentes de c\'omputo en la nube y servicios de aplicaci\'on (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, p. 2).
+ \textit{\textbf{CloudSim}} es un nuevo, generalizado y extensible \textit{framework} de simulaci\'on, que permite el modelaje, simulaci\'on y experimentaci\'on de infraestructuras emergentes de c\'omputo en la nube y servicios de aplicaci\'on (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, p. 2).
 
 
 \setcounter{figure}{2}
@@ -45,7 +45,7 @@ Entre los componentes que proporciona dicho \textit{framework} se encuentran los
 	\item \textit{ \textbf{Datacenter:}} Esta clase modela el núcleo de los servicios en un nivel de infraestructura \textit{(hardware)} que son ofrecidos por \textit{Cloud Providers (Amazon, Azure, App Engine)}. Estos son encapsulados en un conjunto de \textit{host} que pueden ser homogéneos o heterogéneos con respecto a sus configuraciones de \textit{hardware} (memoria, n\'ucleos, capacidad, y almacenamiento) (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, cap. 4).
 	\item \textit{ \textbf{DatacenterBroker:}} Esta clase modela un \textit{broker}, el cual es responsable de mediar las negociaciones entre el \textit{SaaS} y los \textit{Cloud providers}; y dichas negociaciones son manejadas por los requerimientos \textit{QoS} (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, cap. 4).
 	\item  \textit{\textbf{Host:}} Esta clase modela los recursos f\'isicos como una computadora o un servidor de almacenamiento (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, cap. 4).
-	\item  \textit{\textbf{Vm:}} Esta clase modela una M\'aquina Virtual \textit{(VM)}, la cual es administrada y hosteada por un componente \textit{host} en la nube. Cada \textit{VM} tiene acceso a un componente que almacena las siguientes características relacionadas a una \textit{VM}: memoria accesible, procesador, tamaño de almacenamiento (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, cap. 4).
+	\item  \textit{\textbf{Vm:}} Esta clase modela una M\'aquina Virtual \textit{(VM)}, la cual es administrada y hosteada por un componente \textit{host} en la nube. Cada \textit{VM} tiene acceso a un componente que almacena las siguientes características relacionadas a una \textit{VM}: memoria accesible, procesador y tamaño de almacenamiento (\citeauthor{calheiros2011cloudsim}, \citeyear{calheiros2011cloudsim}, cap. 4).
 \end{itemize}
 
 
@@ -126,7 +126,7 @@ En la figura (\ref{fig:max}) tenemos el algoritmo de \textit{Max-Min}, el cual o
 	\label{fig:RRAlgorithm}
 \end{figure}
 
-Como podemos apreciar en la figura (\ref{fig:RRAlgorithm}), las tareas se van ejecutando de manera que llegan pero al momento de ser mayor el número de tarea la asigna en la máquina virtual principal, esta operación de asignación la podemos expresar de la siguiente manera: $$C_n \rightarrow Vm_{n \% m}$$ donde $C_n$ representa la $n$-ésima tarea y $m$ es el número total de máquinas virtuales.
+Como podemos apreciar en la figura (\ref{fig:RRAlgorithm}), las tareas se van ejecutando de manera que llegan, pero al momento de ser mayor el número de tarea la asigna en la máquina virtual principal, esta operación de asignación la podemos expresar de la siguiente manera: $$C_n \rightarrow Vm_{n \% m}$$ donde $C_n$ representa la $n$-ésima tarea y $m$ es el número total de máquinas virtuales.
 
 \newpage
 A continuaci\'on se muestran algunas capturas del c\'odigo para la implementaci\'on de los primeros algoritmos en el centro de datos:
@@ -208,7 +208,7 @@ Para obtener una muestra representativa del tamaño de tareas y tiempo de ejecuc
 \end{figure}
 
 \newpage
-Para realizar la medición en tiempo de ejecución, y tamaño de las tareas, se hizo uso de un módulo de contabilidad el cual permite generar e imprimir facturas hacia diversos clientes. Además de agregar módulos de RRHH para el levantamiento de usuarios de una empresa (Figura \ref{fig:ContOdoo}).
+Para realizar la medición en tiempo de ejecución y tamaño de las tareas, se hizo uso de un módulo de contabilidad el cual permite generar e imprimir facturas hacia diversos clientes. Además de agregar módulos de RRHH para el levantamiento de usuarios de una empresa (Figura \ref{fig:ContOdoo}).
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -258,7 +258,7 @@ Otra de las características de las herramientas de desarrolladores es que se pu
 	\label{fig:HeaderRequest}
 \end{figure}
 
-En base a los resultados obtenidos dentro del sistema \textit{Odoo} el tamaño de las tareas para la simulación quedan establecidas en un intervalo de \textbf{10 kb} a \textbf{1 mb} como se muestra en la figura (\ref{fig:TCar}).
+En base a los resultados obtenidos dentro del sistema \textit{Odoo}, el tamaño de las tareas para la simulación quedan establecidas en un intervalo de \textbf{10 kb} a \textbf{2 mb} como se muestra en la figura (\ref{fig:TCar}).
 
 
 \subsection*{\textit{DatacenterBrokers} para Algoritmos de Calendarización}
@@ -275,7 +275,7 @@ Para ello seg\'un muestra el diagrama, el encargado de asignar cada tarea en una
 	\label{fig:fcfsBroker}
 \end{figure}
 
-La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}, recorre la lista de tareas y la asigna en la m\'aquina virtual correspondiente, calculando la tarea actual $i$ en la m\'aquina virtual \textbf{$i\%reqVms$} donde \textbf{$reqVms$} es el n\'umero de m\'aquinas virtuales.
+La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}. Recorre la lista de tareas y la asigna en la m\'aquina virtual correspondiente, calculando la tarea actual $i$ en la m\'aquina virtual \textbf{$i\%reqVms$} donde \textbf{$reqVms$} es el n\'umero de m\'aquinas virtuales.
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!]
@@ -327,18 +327,18 @@ En la Figura (\ref{fig:RRBroker}) se muestra la implementación del \textit{Brok
 
 \subsection{Mejorar el costo de procesamiento y el tiempo de ejecución}
 
-El objetivo de éste proyecto es minimizar el tiempo de ejecución y el costo de procesamiento de acuerdo a los recursos heterogéneos del centro de datos. Para ello se hará la  implementación de una \textit{meta-heurística} con un método llamado Optimización por Enjambre de Partículas \textit{PSO} (\textit{Particle Swarm Optimization}).\\
+El objetivo de éste proyecto es minimizar el tiempo de ejecución y el costo de procesamiento de acuerdo a los recursos heterogéneos del centro de datos. Para ello se hará la  implementación de una \textit{metaheurística} con un método llamado Optimización por Enjambre de Partículas \textit{PSO} (\textit{Particle Swarm Optimization}).\\
 
 Optimización por Enjambre de Partículas (\textit{PSO}) es una técnica de optimización basada en la búsqueda de un óptimo global, introducida por Kennedy and Eberhart \cite{pandey2010}. 
 
 Se eligió  \textit{PSO} debido al concepto simple que tiene \cite{poli2007},  la implementación requiere de simples operaciones matemáticas que en términos de computación no consume memoria  y la velocidad de convergencia es relativamente rápida dependiendo del número de partículas \cite{eberhart1995}.\\ 
-Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtención de una solución óptima en todos los casos.\cite{osman2012}
+Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtención de una solución óptima en todos los casos (\cite{osman2012}).
 
 \subsection*{Algoritmo \textit{PSO} y un ambiente en la nube}
 \addcontentsline{toc}{subsection}{Algoritmo PSO y un ambiente en la nube}
-\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda \cite{poli2007}.
+\textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda (\cite{poli2007}).
 
-Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera \cite{pandey2010}:$X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  $.
+Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera \cite{pandey2010}: $X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  $.
 
 Para la simulación en \textit{CloudSim} éstas partículas serán las tareas en el centro de datos, $ = \{T_1 , T_2 , ... T_n\}  $.
 
@@ -353,9 +353,9 @@ En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j
 	\begin{algorithmic}[1]
 		\State El número de partículas será igual al número de tareas en $ \{ t_i \} \in T $
 		\State Se inicializa la posición de las partículas aleatoriamente de $VM = 1,...,j $ y con velocidad aleatoria $v_i$
-		\State Para cada partícula, calcular $fitness value$
-		\State Si $fitness value$ es mejor que el anterior $pbest$, igualar $fitness value$ como el nuevo $pbest$
-		\State Seleccionar la mejor partícula como $gbest$
+		\State Para cada partícula, calcular $fitness value$.
+		\State Si $fitness value$ es mejor que el anterior $pbest$, igualar $fitness value$ como el nuevo $pbest$.
+		\State Seleccionar la mejor partícula como $gbest$.
 		\State Para todas las partículas, calcular la velocidad y actualizar su posición.
 		\State Si no se alcanza el máximo número de iteraciones, repetir el paso 3.
 		
@@ -366,10 +366,10 @@ En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j
 
 \newpage
 
-En el algoritmo (\ref{alg:PSO}) se muestran los pasos del PSO. Inicia con una inicialización aleatoria de la posición y velocidad de las partículas. Para la simulación las partículas serán las tareas en el centro de datos.
-El valor asignado a la dimensión de las partículas son los índices de los recursos (Máquinas Virtuales). Por lo tanto cada tarea representa un mapeo de una tarea en todas las máquinas virtuales. Entonces la dimensión de una partícula depende del número de máquinas virtuales.
-Para cada partícula se calcula un $fitnessvalue$ que es el óptimo local al nivel de partícula se evalúa y se actualiza. 
+En el algoritmo (\ref{alg:PSO}) se muestran los pasos del PSO. Inicia con una inicialización aleatoria de la posición y velocidad de las partículas. Para la simulación, las partículas serán las tareas en el centro de datos.
+El valor asignado a la dimensión de las partículas son los índices de los recursos (Máquinas Virtuales). Por lo tanto, cada tarea representa un mapeo de una tarea en todas las máquinas virtuales. Entonces la dimensión de una partícula depende del número de máquinas virtuales.
+Para cada partícula se calcula un $fitnessvalue$ que es el óptimo local al nivel de partícula que se evalúa y se actualiza. 
 Después se evalúa la mejor partícula como $gbest$ que sería el óptimo del enjambre.
-Se delimita un número $m$, mientras no se llegue al límite la iteración continua.Esto para no entrar a un ciclo que nunca termina, ya que PSO  no garantiza la obtención de una solución óptima en todos los casos\cite{osman2012}.
+Se delimita un número $m$, mientras no se llegue al límite la iteración continua; esto para no entrar a un ciclo que nunca termina, ya que PSO  no garantiza la obtención de una solución óptima en todos los casos (\cite{osman2012}).
 
 %ver la seccion anexo

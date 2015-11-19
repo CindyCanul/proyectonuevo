@@ -42,7 +42,7 @@ El problema de la calendarizaci\'on pertenece a los algoritmos NP-Dif\'icil, lo 
 
 
 Los centros de datos son una parte esencial en la tecnolog\'ia en la nube, est\'an conformados por varios servidores virtuales que alojan varios trabajos, ejecut\'andose por estancias de tiempo y a la vez recibiendo peticiones a esos trabajos (\citeauthor{shimpy2014different}, \citeyear{shimpy2014different}).
-Para que el c\'omputo en la nube pueda rendir correctamente, se necesita una buena programaci\'on de trabajos o calendarizaci\'on. Este problema tiene un gran n\'umero de soluciones posibles, toma mucho tiempo en encontrar un respuesta \'optima y por eso est\'a dentro de los algoritmos NP-Dif\'icil. No existe un m\'etodo para resolver lo anterior, sin embargo es posible obtener una soluci\'on cercana contemplando algunos entornos (\citeauthor{shimpy2014different}, \citeyear{shimpy2014different}).
+Para que el c\'omputo en la nube pueda rendir correctamente se necesita una buena programaci\'on de trabajos o calendarizaci\'on. Este problema tiene un gran n\'umero de soluciones posibles, toma mucho tiempo en encontrar un respuesta \'optima y por eso est\'a dentro de los algoritmos NP-Dif\'icil. No existe un m\'etodo para resolver lo anterior, sin embargo es posible obtener una soluci\'on cercana contemplando algunos entornos (\citeauthor{shimpy2014different}, \citeyear{shimpy2014different}).
 En esta investigaci\'on se propone una mejora a un algoritmo de calendarizaci\'on para el caso de estudio de un sistema \textit{ERP} en la nube, teniendo en cuenta sus posibles escenarios y peticiones heterog\'eneas. De esta manera se podr\'a contar con un esquema de distribuci\'on de trabajos que satisfaga las necesidades de un sistema \textit{ERP}, mejorando el tiempo de respuesta y aprovechando los recursos. Con beneficios a los proveedores de servicios \textit{(SaaS)} de sistemas \textit{ERP}.
 
 
@@ -70,7 +70,7 @@ En la figura (\ref{fig:uno}) se puede observar la arquitectura del centro de dat
 	\item \textbf{Servidor administrador:} Es el servidor que tendr\'a el rol de \textit{front end} en el centro de datos, teniendo una interacci\'on directa con las peticiones de los usuarios, que son especificados en \'este documento como trabajos.
 	El principal objetivo de \'este elemento es delegar los trabajos a las m\'aquinas virtuales en los distintos \textit{hosts} del centro de datos.
 	\item \textit{\textbf{Host:}} es el recurso de \textit{hardware} que se tiene en el centro de datos. Una de las caracter\'isticas de \'este elemento es que es finito.
-	\item \textbf{M\'aquinas Virtuales:} son instancias dentro de los \textit{host}, tienen como objetivo resolver los trabajos que se les sea asignado.
+	\item \textbf{M\'aquinas Virtuales:} son instancias dentro de los \textit{host}, tienen como objetivo resolver los trabajos asignados.
 \end{itemize}
 
 
@@ -108,7 +108,8 @@ Proponer un esquema de distribución que resuelva de manera eficiente el problem
 \section*{Hip\'otesis}
 \addcontentsline{toc}{section}{Hip\'otesis}
 
-La modificaci\'on de un esquema de distribuci\'on mejorar\'a el rendimiento de la calendarizaci\'on para un sistema \textit{ERP} en la nube.\\
+
+Se puede mejorar el tiempo de ejecución y el costo de procesamiento de una sistema \textit{ERP}  en la nube, mediante un algoritmo de calendarización basado en una metaheurística. 
 
 Para realizar la verificaci\'on de validez de la hip\'otesis se usar\'an:
 

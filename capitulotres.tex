@@ -7,7 +7,7 @@
 \section*{Introducci\'on}
 \addcontentsline{toc}{section}{Introducci\'on}
 
-En éste capítulo se describe los resultados obtenidos en modelado y simulación del centro de datos en CloudSim. 
+En éste capítulo se describe los resultados obtenidos en modelado y simulación del centro de datos en \textit{CloudSim}. 
 Se ilustran por medio de gráficas lineales el tiempo de ejecución de los algoritmos de calendarización. Se representa en gráficas de barras el promedio del costo de procesamiento y tiempo de ejecución y una interpretación de la desviación estándar obtenida. La experimentación fue desarrollada en una computadora con un procesador \textit{Intel Core i5}, teniendo la siguiente configuración: \textit{2.5 GHz, 3 MB de cach\'e, 4 GB de RAM, Linux Ubuntu 14.04 LTS, 64 bits como sistema operativo y JDK 8.6}.
 
 
@@ -22,8 +22,8 @@ Se ilustran por medio de gráficas lineales el tiempo de ejecución de los algor
 
 Para evaluar los algoritmos de calendarizaci\'on seleccionados se ha implementado un entorno de c\'omputo en la nube que consiste en un \textit{datacenter}, un \textit{broker}, m\'aquinas virtuales y \textit{host}.  Con el objetivo de evaluar el tiempo de ejecuci\'on y el costo de procesamiento en el \textit{datacenter} tras ejecutar cierto n\'umero de tareas \textit{(cloudlets)}.
 
-Para la configuraci\'on del centro de datos en \textit{CloudSim} se utilizaron diez \textit{host}, cinco m\'aquinas virtuales por \textit{host} y las tareas fueron establecidas en un intervalo de 100 hasta 500 (Cuadro \ref{table:datacenter}).
-Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 2048 Mb de memoria RAM, dos n\'ucleos de procesamiento que tienen un almacenamiento de 800 GB \'o 1 TB, estas fueron elegidas de manera aleatoria y finalmente el ancho de banda fue de 1 GB/s.
+Para la configuraci\'on del centro de datos en \textit{CloudSim}, se utilizaron cincuenta \textit{host}, quince m\'aquinas virtuales por \textit{host} y las tareas fueron establecidas en un intervalo de 100 hasta 500 (Cuadro \ref{table:datacenter}).
+Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20480 Mb de memoria RAM, ocho n\'ucleos de procesamiento que tienen un almacenamiento de 800 GB \'o 1 TB, estas fueron elegidas de manera aleatoria y finalmente el ancho de banda fue de 10 GB/s.
 
 \setcounter{table}{0}
 \renewcommand\thetable{\arabic{table}}
@@ -32,9 +32,9 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf Datacenter}} \\ \midrule
-		Host              & 10               \\
-		VM                & 5                \\
-		Cloudlet          & 100-500          \\ \bottomrule
+		Host              & 50               \\
+		VM                & 15                \\
+		Cloudlet          & 100 - 500          \\ \bottomrule
 		
 	\end{tabular}
 	\caption{Configuraci\'on \textit{Datacenter}, Fuente: Elaboraci\'on propia.}
@@ -48,9 +48,9 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf Host}} \\ \midrule
-		RAM           & 2048 MB        \\
-		CPU           & 2              \\
-		Storage       & 800GB-1TB      \\ \midrule
+		RAM           & 20480 MB        \\
+		CPU           & 8              \\
+		Storage       & 800GB - 1TB      \\ \midrule
 		BW            & 10 GB/s        
 	\end{tabular}
 	\caption{Configuraci\'on de \textit{Host}, Fuente: Elaboraci\'on propia.}
@@ -66,8 +66,8 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf VirtualMachine}} \\ \midrule
-		RAM               & 512 MB| 1GB          \\
-		MIPS              & 250 | 500            \\
+		RAM               & 512 MB | 2GB          \\
+		vCPU              & 2           \\
 		Storage           & 10 GB                \\ \midrule
 		BW                & 1 GB/s              
 	\end{tabular}
@@ -83,9 +83,9 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 	\begin{tabular}{@{}cc@{}}
 		\toprule
 		\multicolumn{2}{c}{{\bf Cloudlet}} \\ \midrule
-		length           & 1kb-1024kb        \\
-		MIPSlength       & 1-3      \\
-		fileSize           & 1kb-1024kb      \\ \midrule
+		length           & 100 - 1000 MI       \\
+		fileSize     & 1KB - 2MB      \\
+		outputSize           & 1KB - 2MB      \\ \midrule
 	  
 	\end{tabular}
 	\caption{Configuraci\'on \textit{Cloudlet}, Fuente: Elaboraci\'on propia.}
@@ -93,10 +93,39 @@ Como se puede apreciar en el (Cuadro \ref{tab:host}), cada \textit{host} tuvo 20
 \end{table}
 
 
-En el Cuadro (\ref{tab:machine}) se muestran los par\'ametros que se consider\'o para las m\'aquinas virtuales, donde cada \textit{VM} tendr\'a 10 GB de almacenamiento, 512 MB  o 1 GB seleccionado de manera aleatoria, adem\'as para la caracter\'istica del procesador se tiene  la propiedad \textit{MIPS} \textit{(million instructions per second)} con 250 \'o 500 y un ancho de banda de 1000 kb/s.
+En el Cuadro (\ref{tab:machine}) se muestran los par\'ametros que se consider\'o para las m\'aquinas virtuales, donde cada \textit{VM} tendr\'a 10 GB de almacenamiento, 512 MB  o 2 GB seleccionado de manera aleatoria, adem\'as para la caracter\'istica del procesador se tiene  la propiedad \textit{MIPS} \textit{(million instructions per second)} con 250 \'o 500 y un ancho de banda de 1000 kb/s.
 
-Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 1 kb a 1024 kb de acuerdo al tamaño mínimo y máximo en el ERP \textit{Odoo},  el par\'ametro \textit{fileSize}, que representa el tamaño del archivo de entrada, va de 1 kb a 1024 kb as\'i como el archivo de salida, como par\'ametro final se tiene los \textit{MIPS} que ir\'an de 1 a 3 (Cuadro \ref{tab:cloudlet}).
+Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 100 MI a 1000 MI de acuerdo al tamaño mínimo y máximo en el ERP \textit{Odoo},  el par\'ametro \textit{fileSize}, que representa el tamaño del archivo de entrada, va de 1 kb a 2 mb as\'i como el archivo de salida, como par\'ametro final se tiene los \textit{outputSize} que ir\'an de 1 kb a 2 mb (Cuadro \ref{tab:cloudlet}).
 
+
+\setcounter{table}{4}
+\renewcommand\thetable{\arabic{table}}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{@{}cc@{}}
+		\toprule
+		\multicolumn{2}{c}{{\bf Amazon EC2 t2.medium}} \\ \midrule
+		length           & 1 kb - 1024 kb       \\
+		vCPU     & 2     \\
+		RAM &2 GB \\
+		Costo por hora           & \$0.052 USD      \\ \midrule
+		
+	\end{tabular}
+	\caption{Configuraci\'on \textit{Cloudlet}, Fuente: Elaboraci\'on propia.}
+	\label{tab:cloudlet}
+\end{table}
+
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
+%%escribir lo de la tabla aqui AMAZON y verificar texto de las tablas de arriba.
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
+%%-----------------------------------------
 
 
 \newpage
@@ -105,7 +134,7 @@ Para la configuraci\'on de las tareas, se tom\'o el tamaño con un intervalo de 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
-	\includegraphics[scale=0.6]{media/tiempoejecucion}
+	\includegraphics[scale=0.6]{media/tiempoejecucionjpg}
 	\caption{Promedio tiempo de ejecuci\'on con tareas 100-500, Fuente: Elaboraci\'on propia.}
 	\label{fig:tiempo}
 \end{figure}
