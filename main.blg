@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
 A level-1 auxiliary file: carta.aux
 A level-1 auxiliary file: resumen.aux
 A level-1 auxiliary file: abstract.aux
@@ -12,4 +14,45 @@ A level-1 auxiliary file: glosario.aux
 A level-1 auxiliary file: anexo.aux
 Database file #1: biblio.bib
 Warning--empty publisher in nishant
+You've used 25 entries,
+            1935 wiz_defined-function locations,
+            621 strings with 8072 characters,
+and the built_in function-call counts, 9303 in all, are:
+= -- 942
+> -- 355
+< -- 22
++ -- 130
+- -- 114
+* -- 731
+:= -- 1639
+add.period$ -- 92
+call.type$ -- 25
+change.case$ -- 179
+chr.to.int$ -- 25
+cite$ -- 26
+duplicate$ -- 370
+empty$ -- 634
+format.name$ -- 163
+if$ -- 1826
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 22
+newline$ -- 141
+num.names$ -- 75
+pop$ -- 143
+preamble$ -- 1
+purify$ -- 181
+quote$ -- 0
+skip$ -- 288
+stack$ -- 0
+substring$ -- 557
+swap$ -- 47
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 146
+warning$ -- 1
+while$ -- 75
+width$ -- 0
+write$ -- 347
 (There was 1 warning)

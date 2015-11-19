@@ -41,8 +41,10 @@
 \contentsline {section}{C}{62}{section*.32}
 \contentsline {section}{E}{62}{section*.33}
 \contentsline {section}{F}{62}{section*.34}
-\contentsline {section}{P}{63}{section*.35}
-\contentsline {chapter}{Anexos}{64}{chapter*.36}
-\contentsline {section}{Simulaci\IeC {\'o}n B\IeC {\'a}sica en \textit {CloudSim}}{65}{section*.37}
-\contentsline {section}{\textit {Cloud Brokers}}{69}{section*.38}
-\contentsline {section}{\textit {Metaheur\IeC {\'\i }stica PSO}}{76}{section*.44}
+\contentsline {section}{H}{63}{section*.35}
+\contentsline {section}{P}{63}{section*.36}
+\contentsline {section}{S}{63}{section*.37}
+\contentsline {chapter}{Anexos}{64}{chapter*.38}
+\contentsline {section}{Simulaci\IeC {\'o}n B\IeC {\'a}sica en \textit {CloudSim}}{65}{section*.39}
+\contentsline {section}{\textit {Cloud Brokers}}{69}{section*.40}
+\contentsline {section}{\textit {Metaheur\IeC {\'\i }stica PSO}}{76}{section*.46}
