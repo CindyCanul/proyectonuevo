@@ -141,7 +141,7 @@ El costo de la instancia en Amazon es \$0.052 USD, entonces se configuró la car
 \newpage
 \section{Simulación en \textit{CloudSim}}
 
-Al tener la configuración completa del centro de datos en Cloudsim, se procedió a realizar la simulación.
+Al tener la configuración completa del centro de datos en \textit{CloudSim}, se procedió a realizar la simulación.
 Para la simulación, el programa fue ejecutado 30 veces y se ordenó ascendentemente la suma total del tiempo de ejecución de cada simulación. Se eliminaron las dos con menor tiempo y las dos con mayor tiempo, con el fin de evitar sesgos ya sea de manera positiva o negativa.
 
 \setcounter{figure}{24}
@@ -209,7 +209,7 @@ Para mostrar el comportamiento del tiempo de ejecuci\'on por cada algoritmo, se 
 	\label{fig:minmin}
 \end{figure}
 
-En la parte de arriba se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}). Por último, en la figura (\ref{fig:roundrobin}) podemos visualizar la gráfica correspondiente al algoritmo \textit{Round Robin}. Para éste último se observan picos en el tiempo de ejecució, esto es porque la tarea es fraccionada, y para pasar al estado de \textit{COMPLETADA} cada fracción debe ser ejecutada por la máquina virtual correspondiente.
+En la parte de arriba se puede apreciar el algoritmo \textit{Min-Min} en el que el tiempo de ejecuci\'on fue aumentando conforme se resolv\'ian las tareas (figura \ref{fig:minmin}). Por último, en la figura (\ref{fig:roundrobin}) podemos visualizar la gráfica correspondiente al algoritmo \textit{Round Robin}. Para éste último se observan picos en el tiempo de ejecución, esto es porque la tarea es fraccionada y para pasar al estado de \textit{COMPLETADA} cada fracción debe ser ejecutada por la máquina virtual correspondiente.
 
 
 \renewcommand\thefigure{\arabic{figure}}
@@ -256,27 +256,27 @@ La figura (\ref{fig:figure}) muestra una comparativa de los cuatro algoritmos mo
 Observando la desviaci\'on est\'andar de \'estas muestras anteriores, los algoritmo \textit{Min-Min}, \textit{Round Robin} y \textit{FCFS} tuvieron m\'as variaciones en las muestras con respecto a la media, mientras que el \textit{Max-Min} tuvo las variaciones por debajo de las dos anteriores (Cuadro \ref{tiempotabla}).
 
 
-Por último se realizo la simulación contemplando las características de las tareas, pero sin procesamiento previo antes de calendarizar. 
+Por último se realizó la simulación contemplando las características de las tareas, pero sin procesamiento previo antes de calendarizar. 
 
-Además se realizó la simulación del algoritmo propuesto en el capítulo dos. Para ello se realizaron diez simulaciones, descartando la de mejor y peor resultado.
+De igual forma se hizo la simulación del algoritmo propuesto en el capítulo dos. Para ello se realizaron diez simulaciones, descartando la de mejor y peor resultado.
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
 	\includegraphics[scale=0.7]{media/tiempoFinal}
-	\caption{Tiempo ejecuci\'on con el algoritmo propuesto(izqda.) y el tiempo de ejecución sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}
+	\caption{Tiempo ejecuci\'on con el algoritmo propuesto (izqda.) y el tiempo de ejecución sin procesamiento previo (dcha.), Fuente: Elaboraci\'on propia.}
 	\label{fig:timeF}
 \end{figure}
 
-En la figura \ref{fig:timeF} se aprecia el tiempo de ejecución del algoritmo propuesto y de la simulación sin ningún procesamiento previo. Con la heurística el promedio del tiempo de ejecución se reduce de 80 $ms$ a 60 $ms$ sin embargo es el tiempo que le lleva al centro de datos procesar esa cantidad de tareas, pero no se tiene en cuenta el tiempo previo para la búsqueda de partícula óptima. En promedio éste proceso se toma entre 20$ms$ a 30$ms$ por simulación.
+En la figura (\ref{fig:timeF}) se aprecia el tiempo de ejecución del algoritmo propuesto y de la simulación sin ningún procesamiento previo. Con la heurística el promedio del tiempo de ejecución se reduce de 80 $ms$ a 60 $ms$, sin embargo es el tiempo que le lleva al centro de datos procesar esa cantidad de tareas, pero no se tiene en cuenta el tiempo previo para la búsqueda de partícula óptima. En promedio éste proceso se toma entre 20 $ms$ a 30 $ms$ por simulación.
 
 \renewcommand\thefigure{\arabic{figure}}
 \begin{figure}[h!] 
 	\centering
 	\includegraphics[scale=0.7]{media/costoFinal}
-	\caption{Costo de procesamiento con el algoritmo propuesto(izqda.) y costo de procesamiento sin procesamiento previo(dcha.), Fuente: Elaboraci\'on propia.}
+	\caption{Costo de procesamiento con el algoritmo propuesto (izqda.) y costo de procesamiento sin procesamiento previo (dcha.), Fuente: Elaboraci\'on propia.}
 	\label{fig:costF}
 \end{figure}
 
-En cuanto al costo de procesamiento las simulaciones que plasmaron el resultado esperado, fue menor de 50 unidades como se muestra en la figura \ref{fig:costF}. Comparado con \textit{Round Robin} que tenia un costo de entre 60 a 80 unidades, existe una mejoría.
+En cuanto al costo de procesamiento, las simulaciones que plasmaron el resultado esperado; fue menor de 50 unidades como se muestra en la figura (\ref{fig:costF}). Comparado con \textit{Round Robin} que tenía un costo de entre 60 a 80 unidades, existe una mejoría.
 
