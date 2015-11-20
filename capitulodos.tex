@@ -287,7 +287,7 @@ La Figura (\ref{fig:fcfsBroker}) muestra el algoritmo de \textit{FCFS}. Recorre 
 
 \newpage
 
-En la Figura (\ref{fig:minminBroker}) tenemos la implementaci\'on del algoritmo \textit{Min-Min} en el cual podemos apreciar el ordenamiento de la lista antes de pasar a  la asignaci\'on de las m\'aquinas virtuales.
+En la Figura (\ref{fig:minminBroker}) se tiene la implementaci\'on del algoritmo \textit{Min-Min} en el cual se aprecia el ordenamiento de la lista antes de pasar a  la asignaci\'on de las m\'aquinas virtuales.
 
 \newpage
 \renewcommand\thefigure{\arabic{figure}}
@@ -298,7 +298,7 @@ En la Figura (\ref{fig:minminBroker}) tenemos la implementaci\'on del algoritmo 
 	\label{fig:maxminBroker}
 \end{figure}
 
-En la Figura (\ref{fig:maxminBroker}) observamos la implementaci\'on del algoritmo de \textit{Max-Min} el cual hace un ordenamiento de mayor a menor, v\'ease la funci\'on \textbf{\textit{revert}} utilizada, la cual se explicar\'a m\'as adelante.
+En la Figura (\ref{fig:maxminBroker}) se observa la implementaci\'on del algoritmo de \textit{Max-Min} el cual hace un ordenamiento de mayor a menor, v\'ease la funci\'on \textbf{\textit{revert}} utilizada, la cual se explicar\'a m\'as adelante.
 
 \newpage
 
@@ -311,7 +311,7 @@ En la Figura (\ref{fig:maxminBroker}) observamos la implementaci\'on del algorit
 	\label{fig:sortRevert}
 \end{figure}
 
-En la Figura (\ref{fig:sortRevert}) tenemos la implementaci\'on de los m\'etodos de ordenamiento utilizados, el \textbf{sort} utilizado para ordenar las tareas de menor a mayor de acuerdo al tamaño y el \textbf{revert} de forma inversa.
+En la Figura (\ref{fig:sortRevert}) se tiene la implementaci\'on de los m\'etodos de ordenamiento utilizados, el \textbf{sort} utilizado para ordenar las tareas de menor a mayor de acuerdo al tamaño y el \textbf{revert} de forma inversa.
 
 \newpage
 \renewcommand\thefigure{\arabic{figure}}
@@ -338,13 +338,49 @@ Está claro que como toda \textit{metaheurística, PSO} no garantiza la obtenci�
 \addcontentsline{toc}{subsection}{Algoritmo PSO y un ambiente en la nube}
 \textit{PSO} permite optimizar un problema en base a una población de soluciones candidatas, que llevan el término \textit{“partículas”}, dichas partículas se mueven en un espacio de búsqueda (tienen en cuenta dos aspectos; la posición y la velocidad). Cada una realiza un movimiento influido por su mejor posición local hasta ése momento y por las mejores posiciones globales encontradas en todo el enjambre mientras recorren el espacio de búsqueda (\cite{poli2007}).
 
-Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene la misma dimensión \textit{n} y es representada de la siguiente manera \cite{pandey2010}: $X(i) = (x_{(i,1)},x_{(i,2)},...,x_{(i,n)})  $.
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
 
+
+Una solución potencial es representada en \textit{PSO} por un vector (partícula). Cada partícula \textit{i} tiene una velocidad y una posición, denotados por las siguientes ecuaciones \cite{pandey2010}: 
+\begin{equation} \label{eq:1}
+v_i^{k+1} = wv_i^k + c_1 rand_1  (pbest_i - x_i^k) + c_2 rand_2  (gbest - x_i^k) 
+\end{equation}
+
+\begin{equation} \label{eq:2}
+x_i^k = x_i^k + v_i^{k+1}
+\end{equation}
+
+
+Donde : 
+\begin{enumerate}
+	\item \itab{$w$} \tab{inercia}
+	\item \itab{$c_j$} \tab{coeficiente de aceleración;$j=1,2$}
+	
+	\item \itab{$rand_i$} \tab{número aleatorio entre $0$ y $1$}
+	\item \itab{$pbest_i$} \tab{La mejor posición de la partícula $i$}
+	\item \itab{$gbest$} \tab{La mejor posición de partícula en el enjambre}
+\end{enumerate}
 Para la simulación en \textit{CloudSim} éstas partículas serán las tareas en el centro de datos, $ = \{T_1 , T_2 , ... T_n\}  $.
 
-%De igual manera las dependencias de los datos es representado por $E$,  que es, $f_j,k = (T_j,T_k) \in E$, en otras palabras $E$ es el dato producido por $T_j$ y consumido por $T_k$. 
+En la ecuación \ref{eq:1} se describe cómo será calculado la velocidad de la partícula $i$ en la iteración $k+1$. El cual depende de la mejor posición local hasta ese momento y la mejor posición en el enjambre hasta ese momento, se tiene un parámetro de inercia que para éste proyecto será uno,el coeficiente de aceleración será entre uno y dos, quiere decir que nos moveremos como máximo dos posiciones en nuestro espacio de recursos.
 
-En el centro de datos se tiene un conjunto de máquinas virtuales $VM = \{1,..,j\}$, y un conjunto de tareas $T = \{1,...,k\}$. Entonces se asume que el \textit{"promedio"} del tiempo de procesamiento de una tarea $T_k$ en la máquina virtual $VM_j$ para un tamaño de tarea conocido.
+Para la implementación del  algoritmo en \textit{CloudSim} dicha posición será dado por el conjunto de máquinas virtuales del centro de datos $VM = \{1,..,j\}$, es decir el espacio de búsqueda para las partículas.
+
+La ecuación \ref{eq:2} se muestra como se actualiza la posición, que es la suma de la posición de la partícula $i$ en la iteración $k$ y la velocidad de la partícula $i$ en la iteración $k+1$.
+
+Otro concepto importante de la técnica PSO, es cómo se implementa la función $fitness$, que en el desarrollo de ésta simulación, será dado por el costo de procesamiento de la partícula $i$ en la máquina virtual $VM_j$ durante la iteración $k$.
+
+\begin{equation} \label{eq:3}
+Cost = (MIPS Virtual Machine * MI Cloudlet ) * cost per second 
+\end{equation}
+
+Para el cálculo de ésta valor $fitness$ es necesario realizar el estimado de cuánto costará ejecutar la tarea $i$ en la máquina virtual $j$, antes de enviarla a la máquina virtual para ello fue necesario establecer dicho valor con ayuda de la ecuación \ref{eq:3}.
+
+
+
+
+En donde se pone la relación de los \textit{MIPS} de la máquina virtual con los \textit{MI} que posee la tarea.
 
 
 
@@ -372,4 +408,22 @@ Para cada partícula se calcula un $fitnessvalue$ que es el óptimo local al niv
 Después se evalúa la mejor partícula como $gbest$ que sería el óptimo del enjambre.
 Se delimita un número $m$, mientras no se llegue al límite la iteración continua; esto para no entrar a un ciclo que nunca termina, ya que PSO  no garantiza la obtención de una solución óptima en todos los casos (\cite{osman2012}).
 
-%ver la seccion anexo
+
+\begin{algorithm} 
+	\begin{algorithmic}[1]
+		\State Se crean las tareas para el centro de datos $ \{ t_i \} \in T $
+		\State El número de partículas será igual al número de tareas en $ \{ p_i \} \in T $
+		\State Se ordenan las partículas de menor a mayor tamaño
+		\State Se ejecuta \textit{PSO} con en enjambre actual $ P\{p_1 .. p_n \} $
+		\State La partícula candidata, resultado de PSO, se asigna a la máquina virtual seleccionada.
+		\State Se elimina dicha partícula del enjambre.
+		\State Se ejecuta PSO con el enjambre actualizado 
+		\State Mientras queden partículas por calendarizar, repetir el paso 5.
+		
+	\end{algorithmic} 
+	\caption{Algoritmo heurístico propuesto}
+	\label{alg:PSO2}
+\end{algorithm}
+
+
+En el algoritmo \ref{alg:PSO2} se aprecia el esquema propuesto, en donde inicialmente las partículas son un mapeo de todas las tareas en el centro de datos, es decir la clase $cloudlet$ se extiende y se agregan los componentes de una partícula. Después las partículas son ordenadas por tamaño para así ejecutar PSO y calendarizar el resultado hasta que todas las tareas están asignadas a su respectiva máquina virtual candidata.
